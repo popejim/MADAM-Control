@@ -8,3 +8,4 @@ C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MADAM-
 C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM_Control.frmMainMenu.resources
 C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.exe
 C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.pdb
+C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM_Control.Forms.frmSplash.resources
