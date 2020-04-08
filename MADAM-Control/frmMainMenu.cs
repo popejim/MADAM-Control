@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace MADAM_Control
 {
-    public partial class Form1 : Form
+    public partial class frmMainMenu : Form
     {
-        public Form1()
+        public frmMainMenu()
         {
             InitializeComponent();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addNewCompanyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

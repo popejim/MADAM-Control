@@ -1,0 +1,10 @@
+C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.csprojAssemblyReference.cache
+C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM_Control.Properties.Resources.resources
+C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.csproj.GenerateResource.cache
+C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.csproj.CoreCompileInputs.cache
+C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MADAM-Control.exe.config
+C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MADAM-Control.exe
+C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MADAM-Control.pdb
+C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM_Control.frmMainMenu.resources
+C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.exe
+C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.pdb
