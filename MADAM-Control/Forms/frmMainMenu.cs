@@ -23,8 +23,11 @@ namespace MADAM_Control
 
             Forms.frmSplash frmSplash = new Forms.frmSplash();
             frmSplash.Show();
+            this.Enabled = false;
             await Task.Delay(4000);
             frmSplash.Hide();
+            this.Enabled = true;
+            this.Focus();
         }
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -48,6 +51,31 @@ namespace MADAM_Control
         private void programSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("^(x)");
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("^(c)");
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("^(v)");
+        }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("^(z)");
+        }
+
+        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SendKeys.Send("^(y)");
         }
     }
 }
