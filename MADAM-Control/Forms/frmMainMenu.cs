@@ -83,6 +83,11 @@ namespace MADAM_Control
             frmAddNewco.FormClosed += new FormClosedEventHandler(frmAddNewco_FormClosed);
             frmAddNewco.Show();
         }
+        private void frmAddNewco_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Enabled = true;
+            this.Focus();
+        }
 
         public void frmMainMenu_KeyPress(object sender, KeyEventArgs e)
         {
@@ -92,10 +97,6 @@ namespace MADAM_Control
             }
         }
 
-        private void frmAddNewco_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Enabled = true;
-            this.Focus();
-        }
+
     }
 }
