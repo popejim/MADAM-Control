@@ -16,14 +16,12 @@ namespace MADAM_Control
         {
             InitializeComponent();
             Shown += frmMainMenu_Shown;
-
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(frmMainMenu_KeyPress);
         }
 
         private async void frmMainMenu_Shown(object sender, EventArgs e)
         {
-
             Forms.frmSplash frmSplash = new Forms.frmSplash();
             frmSplash.Show();
             this.Enabled = false;
@@ -37,12 +35,7 @@ namespace MADAM_Control
 
         }
 
-        private void addNewCompanyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Enabled = false;
-            Forms.frmAddNewCo frmAddNewco = new Forms.frmAddNewCo();
-            frmAddNewco.Show();
-        }
+
 
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
@@ -83,14 +76,26 @@ namespace MADAM_Control
             SendKeys.Send("^(y)");
         }
 
-        void frmMainMenu_KeyPress(object sender, KeyEventArgs e)
+        public void addNewCompanyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Forms.frmAddNewCo frmAddNewco = new Forms.frmAddNewCo();
+            frmAddNewco.FormClosed += new FormClosedEventHandler(frmAddNewco_FormClosed);
+            frmAddNewco.Show();
+        }
+
+        public void frmMainMenu_KeyPress(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.N)
             {
-                this.Enabled = false;
-                Forms.frmAddNewCo frmAddNewco = new Forms.frmAddNewCo();
-                frmAddNewco.Show(); 
+                addNewCompanyToolStripMenuItem_Click(this, e);
             }
+        }
+
+        private void frmAddNewco_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Enabled = true;
+            this.Focus();
         }
     }
 }

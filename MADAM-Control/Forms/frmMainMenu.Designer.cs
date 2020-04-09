@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAllChangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +54,7 @@
             this.lblCompaniesList = new System.Windows.Forms.Label();
             this.dropCompanyList = new System.Windows.Forms.ComboBox();
             this.pictBoxLogo = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.saveAllChangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxLogo)).BeginInit();
             this.SuspendLayout();
@@ -83,13 +82,6 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
-            // 
-            // saveAllChangesToolStripMenuItem
-            // 
-            this.saveAllChangesToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.Save_16x;
-            this.saveAllChangesToolStripMenuItem.Name = "saveAllChangesToolStripMenuItem";
-            this.saveAllChangesToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.saveAllChangesToolStripMenuItem.Text = "Save all changes   Ctrl+S";
             // 
             // programSettingsToolStripMenuItem
             // 
@@ -267,20 +259,18 @@
             this.pictBoxLogo.TabIndex = 1;
             this.pictBoxLogo.TabStop = false;
             // 
-            // textBox1
+            // saveAllChangesToolStripMenuItem
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 134);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 166);
-            this.textBox1.TabIndex = 4;
+            this.saveAllChangesToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.Save_16x;
+            this.saveAllChangesToolStripMenuItem.Name = "saveAllChangesToolStripMenuItem";
+            this.saveAllChangesToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.saveAllChangesToolStripMenuItem.Text = "Save all changes   Ctrl+S";
             // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 518);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dropCompanyList);
             this.Controls.Add(this.lblCompaniesList);
             this.Controls.Add(this.pictBoxLogo);
@@ -288,7 +278,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMainMenu";
-            this.Text = "MADAM Control 0.1";
+            this.Text = "MADAM Control v0.2 - Main Menu";
             this.Load += new System.EventHandler(this.frmMainMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -326,6 +316,5 @@
         private System.Windows.Forms.ToolStripMenuItem allCompaniesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectedCompanyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportToCSVToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

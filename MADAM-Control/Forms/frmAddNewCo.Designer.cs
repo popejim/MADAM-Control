@@ -32,14 +32,12 @@
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.pnlButtons = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.pictLogo = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txtAddDescript = new System.Windows.Forms.TextBox();
+            this.pictLogo = new System.Windows.Forms.PictureBox();
             this.pnlLogo.SuspendLayout();
             this.pnlButtons.SuspendLayout();
-            this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,13 +67,43 @@
             // pnlMain
             // 
             this.pnlMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlMain.Controls.Add(this.txtAddDescript);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlMain.Location = new System.Drawing.Point(128, 0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(672, 391);
             this.pnlMain.TabIndex = 4;
             this.pnlMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMain_Paint);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Enabled = false;
+            this.btnBack.Location = new System.Drawing.Point(541, 26);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.Text = "<  &Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(622, 26);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.TabIndex = 1;
+            this.btnNext.Text = "&Next >";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(713, 26);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // pictLogo
             // 
@@ -87,49 +115,6 @@
             this.pictLogo.TabIndex = 0;
             this.pictLogo.TabStop = false;
             // 
-            // btnBack
-            // 
-            this.btnBack.Enabled = false;
-            this.btnBack.Location = new System.Drawing.Point(541, 26);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 0;
-            this.btnBack.Text = "<  &Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(622, 26);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 1;
-            this.btnNext.Text = "&Next >";
-            this.btnNext.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(713, 26);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "&Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // txtAddDescript
-            // 
-            this.txtAddDescript.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtAddDescript.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAddDescript.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtAddDescript.Location = new System.Drawing.Point(4, 72);
-            this.txtAddDescript.Multiline = true;
-            this.txtAddDescript.Name = "txtAddDescript";
-            this.txtAddDescript.ReadOnly = true;
-            this.txtAddDescript.Size = new System.Drawing.Size(656, 56);
-            this.txtAddDescript.TabIndex = 0;
-            this.txtAddDescript.Text = "MADAM Control Application - Add New Company\r\n\r\nEnter basic details for your new c" +
-    "ompany below, the wizard will then take you through the initial scan and setup";
-            this.txtAddDescript.TextChanged += new System.EventHandler(this.txtAddDescript_TextChanged);
-            // 
             // frmAddNewCo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,12 +125,10 @@
             this.Controls.Add(this.pnlLogo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAddNewCo";
-            this.Text = "Add New Company";
+            this.Text = "Madam Control v0.2 - Add New Company";
             this.Load += new System.EventHandler(this.frmAddNewCo_Load);
             this.pnlLogo.ResumeLayout(false);
             this.pnlButtons.ResumeLayout(false);
-            this.pnlMain.ResumeLayout(false);
-            this.pnlMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictLogo)).EndInit();
             this.ResumeLayout(false);
 
@@ -160,6 +143,5 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.TextBox txtAddDescript;
     }
 }
