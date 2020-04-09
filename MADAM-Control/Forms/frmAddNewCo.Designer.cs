@@ -1,0 +1,165 @@
+﻿namespace MADAM_Control.Forms
+{
+    partial class frmAddNewCo
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddNewCo));
+            this.pnlLogo = new System.Windows.Forms.Panel();
+            this.pnlButtons = new System.Windows.Forms.Panel();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.pictLogo = new System.Windows.Forms.PictureBox();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.txtAddDescript = new System.Windows.Forms.TextBox();
+            this.pnlLogo.SuspendLayout();
+            this.pnlButtons.SuspendLayout();
+            this.pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictLogo)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pnlLogo
+            // 
+            this.pnlLogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pnlLogo.BackColor = System.Drawing.Color.White;
+            this.pnlLogo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlLogo.Controls.Add(this.pictLogo);
+            this.pnlLogo.Location = new System.Drawing.Point(2, 0);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(120, 385);
+            this.pnlLogo.TabIndex = 2;
+            // 
+            // pnlButtons
+            // 
+            this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlButtons.Controls.Add(this.btnCancel);
+            this.pnlButtons.Controls.Add(this.btnNext);
+            this.pnlButtons.Controls.Add(this.btnBack);
+            this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlButtons.Location = new System.Drawing.Point(0, 391);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(800, 59);
+            this.pnlButtons.TabIndex = 3;
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlMain.Controls.Add(this.txtAddDescript);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlMain.Location = new System.Drawing.Point(128, 0);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(672, 391);
+            this.pnlMain.TabIndex = 4;
+            this.pnlMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMain_Paint);
+            // 
+            // pictLogo
+            // 
+            this.pictLogo.BackgroundImage = global::MADAM_Control.Properties.Resources.MADAM_logo;
+            this.pictLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictLogo.Location = new System.Drawing.Point(-1, 267);
+            this.pictLogo.Name = "pictLogo";
+            this.pictLogo.Size = new System.Drawing.Size(121, 116);
+            this.pictLogo.TabIndex = 0;
+            this.pictLogo.TabStop = false;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Enabled = false;
+            this.btnBack.Location = new System.Drawing.Point(541, 26);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.Text = "<  &Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(622, 26);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.TabIndex = 1;
+            this.btnNext.Text = "&Next >";
+            this.btnNext.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(713, 26);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // txtAddDescript
+            // 
+            this.txtAddDescript.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtAddDescript.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAddDescript.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtAddDescript.Location = new System.Drawing.Point(4, 72);
+            this.txtAddDescript.Multiline = true;
+            this.txtAddDescript.Name = "txtAddDescript";
+            this.txtAddDescript.ReadOnly = true;
+            this.txtAddDescript.Size = new System.Drawing.Size(656, 56);
+            this.txtAddDescript.TabIndex = 0;
+            this.txtAddDescript.Text = "MADAM Control Application - Add New Company\r\n\r\nEnter basic details for your new c" +
+    "ompany below, the wizard will then take you through the initial scan and setup";
+            this.txtAddDescript.TextChanged += new System.EventHandler(this.txtAddDescript_TextChanged);
+            // 
+            // frmAddNewCo
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.pnlButtons);
+            this.Controls.Add(this.pnlLogo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmAddNewCo";
+            this.Text = "Add New Company";
+            this.Load += new System.EventHandler(this.frmAddNewCo_Load);
+            this.pnlLogo.ResumeLayout(false);
+            this.pnlButtons.ResumeLayout(false);
+            this.pnlMain.ResumeLayout(false);
+            this.pnlMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictLogo)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel pnlLogo;
+        private System.Windows.Forms.Panel pnlButtons;
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.PictureBox pictLogo;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.TextBox txtAddDescript;
+    }
+}

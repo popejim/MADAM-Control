@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAllChangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +55,6 @@
             this.lblCompaniesList = new System.Windows.Forms.Label();
             this.dropCompanyList = new System.Windows.Forms.ComboBox();
             this.pictBoxLogo = new System.Windows.Forms.PictureBox();
-            this.saveAllChangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxLogo)).BeginInit();
@@ -83,6 +83,13 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
+            // 
+            // saveAllChangesToolStripMenuItem
+            // 
+            this.saveAllChangesToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.Save_16x;
+            this.saveAllChangesToolStripMenuItem.Name = "saveAllChangesToolStripMenuItem";
+            this.saveAllChangesToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.saveAllChangesToolStripMenuItem.Text = "Save all changes   Ctrl+S";
             // 
             // programSettingsToolStripMenuItem
             // 
@@ -245,7 +252,7 @@
             this.dropCompanyList.FormattingEnabled = true;
             this.dropCompanyList.Location = new System.Drawing.Point(72, 67);
             this.dropCompanyList.Name = "dropCompanyList";
-            this.dropCompanyList.Size = new System.Drawing.Size(206, 21);
+            this.dropCompanyList.Size = new System.Drawing.Size(236, 21);
             this.dropCompanyList.TabIndex = 3;
             this.dropCompanyList.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -260,16 +267,9 @@
             this.pictBoxLogo.TabIndex = 1;
             this.pictBoxLogo.TabStop = false;
             // 
-            // saveAllChangesToolStripMenuItem
-            // 
-            this.saveAllChangesToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.Save_16x;
-            this.saveAllChangesToolStripMenuItem.Name = "saveAllChangesToolStripMenuItem";
-            this.saveAllChangesToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.saveAllChangesToolStripMenuItem.Text = "Save all changes   Ctrl+S";
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(81, 196);
+            this.textBox1.Location = new System.Drawing.Point(15, 134);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(293, 166);

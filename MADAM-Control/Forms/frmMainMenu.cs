@@ -16,6 +16,9 @@ namespace MADAM_Control
         {
             InitializeComponent();
             Shown += frmMainMenu_Shown;
+
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(frmMainMenu_KeyPress);
         }
 
         private async void frmMainMenu_Shown(object sender, EventArgs e)
@@ -36,7 +39,9 @@ namespace MADAM_Control
 
         private void addNewCompanyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Enabled = false;
+            Forms.frmAddNewCo frmAddNewco = new Forms.frmAddNewCo();
+            frmAddNewco.Show();
         }
 
         private void frmMainMenu_Load(object sender, EventArgs e)
@@ -76,6 +81,16 @@ namespace MADAM_Control
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SendKeys.Send("^(y)");
+        }
+
+        void frmMainMenu_KeyPress(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.N)
+            {
+                this.Enabled = false;
+                Forms.frmAddNewCo frmAddNewco = new Forms.frmAddNewCo();
+                frmAddNewco.Show(); 
+            }
         }
     }
 }
