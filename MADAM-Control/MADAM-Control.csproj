@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Settings.cs" />
+    <Compile Include="Forms\frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmAdd1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +85,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAdd1.resx">
       <DependentUpon>frmAdd1.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,7 +124,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Question_16x.png" />
+    <None Include="Resources\Redo_grey_16x.png" />
+    <None Include="Resources\Undo_grey_16x.png" />
+    <None Include="Resources\Close_red_16x.png" />
+    <None Include="Resources\Cut_16x.png" />
+    <None Include="Resources\ASX_Copy_grey_16x.png" />
+    <None Include="Resources\ASX_Paste_grey_16x.png" />
+    <None Include="Resources\Add_grey_16x.png" />
+    <None Include="Resources\Edit_grey_16x.png" />
+    <None Include="Resources\ExportTableToFile_16x.png" />
+    <None Include="Resources\ExclamationPoint_16x.png" />
+    <None Include="Resources\Loading_16x.png" />
     <Content Include="Resources\MADAM logo.png" />
+    <None Include="Resources\Settings_16x.png" />
     <None Include="Resources\Save_16x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

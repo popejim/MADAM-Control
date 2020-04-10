@@ -11,3 +11,4 @@ C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM_
 C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM_Control.Forms.frmAddNewCo.resources
 C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM_Control.Forms.frmAdd1.resources
 C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.csprojAssemblyReference.cache
+C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM_Control.Forms.frmSettings.resources

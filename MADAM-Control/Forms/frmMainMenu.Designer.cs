@@ -31,30 +31,30 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.programSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.companiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allCompaniesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectedCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpF1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblCompaniesList = new System.Windows.Forms.Label();
             this.dropCompanyList = new System.Windows.Forms.ComboBox();
             this.pictBoxLogo = new System.Windows.Forms.PictureBox();
             this.saveAllChangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.programSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpF1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxLogo)).BeginInit();
             this.SuspendLayout();
@@ -83,19 +83,6 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // programSettingsToolStripMenuItem
-            // 
-            this.programSettingsToolStripMenuItem.Name = "programSettingsToolStripMenuItem";
-            this.programSettingsToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.programSettingsToolStripMenuItem.Text = "Program Settings";
-            this.programSettingsToolStripMenuItem.Click += new System.EventHandler(this.programSettingsToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -109,41 +96,6 @@
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
-            // cutToolStripMenuItem
-            // 
-            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.cutToolStripMenuItem.Text = "Cut                       Ctrl+X";
-            this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
-            // 
-            // copyToolStripMenuItem
-            // 
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.copyToolStripMenuItem.Text = "Copy                    Ctrl+C";
-            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
-            // 
-            // pasteToolStripMenuItem
-            // 
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.pasteToolStripMenuItem.Text = "Paste                    Ctrl+V";
-            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
-            // 
-            // undoToolStripMenuItem
-            // 
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.undoToolStripMenuItem.Text = "Undo                   Ctrl+Z";
-            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
-            // 
-            // redoToolStripMenuItem
-            // 
-            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.redoToolStripMenuItem.Text = "Redo                    Ctrl+Y";
-            this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
-            // 
             // companiesToolStripMenuItem
             // 
             this.companiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -152,19 +104,6 @@
             this.companiesToolStripMenuItem.Name = "companiesToolStripMenuItem";
             this.companiesToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.companiesToolStripMenuItem.Text = "Companies";
-            // 
-            // addNewCompanyToolStripMenuItem
-            // 
-            this.addNewCompanyToolStripMenuItem.Name = "addNewCompanyToolStripMenuItem";
-            this.addNewCompanyToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.addNewCompanyToolStripMenuItem.Text = "Add Company      Ctrl+N";
-            this.addNewCompanyToolStripMenuItem.Click += new System.EventHandler(this.addNewCompanyToolStripMenuItem_Click);
-            // 
-            // editCompanyToolStripMenuItem
-            // 
-            this.editCompanyToolStripMenuItem.Name = "editCompanyToolStripMenuItem";
-            this.editCompanyToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.editCompanyToolStripMenuItem.Text = "Edit Company       Ctrl+E";
             // 
             // reportsToolStripMenuItem
             // 
@@ -196,12 +135,6 @@
             this.selectedCompanyToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.selectedCompanyToolStripMenuItem.Text = "Selected Company";
             // 
-            // exportToCSVToolStripMenuItem
-            // 
-            this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
-            this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.exportToCSVToolStripMenuItem.Text = "Export to CSV";
-            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -212,20 +145,9 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // helpF1ToolStripMenuItem
-            // 
-            this.helpF1ToolStripMenuItem.Name = "helpF1ToolStripMenuItem";
-            this.helpF1ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.helpF1ToolStripMenuItem.Text = "Help                          F1";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            // 
             // checkForUpdateToolStripMenuItem
             // 
+            this.checkForUpdateToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.Loading_16x;
             this.checkForUpdateToolStripMenuItem.Name = "checkForUpdateToolStripMenuItem";
             this.checkForUpdateToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.checkForUpdateToolStripMenuItem.Text = "Check for update";
@@ -265,6 +187,97 @@
             this.saveAllChangesToolStripMenuItem.Name = "saveAllChangesToolStripMenuItem";
             this.saveAllChangesToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.saveAllChangesToolStripMenuItem.Text = "Save all changes   Ctrl+S";
+            // 
+            // programSettingsToolStripMenuItem
+            // 
+            this.programSettingsToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.Settings_16x;
+            this.programSettingsToolStripMenuItem.Name = "programSettingsToolStripMenuItem";
+            this.programSettingsToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.programSettingsToolStripMenuItem.Text = "Program Settings";
+            this.programSettingsToolStripMenuItem.Click += new System.EventHandler(this.programSettingsToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.Close_red_16x;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // cutToolStripMenuItem
+            // 
+            this.cutToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.Cut_16x;
+            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.cutToolStripMenuItem.Text = "Cut                       Ctrl+X";
+            this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.ASX_Copy_grey_16x;
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.copyToolStripMenuItem.Text = "Copy                    Ctrl+C";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.ASX_Paste_grey_16x;
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.pasteToolStripMenuItem.Text = "Paste                    Ctrl+V";
+            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
+            // 
+            // undoToolStripMenuItem
+            // 
+            this.undoToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.Undo_grey_16x;
+            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.undoToolStripMenuItem.Text = "Undo                   Ctrl+Z";
+            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
+            // 
+            // redoToolStripMenuItem
+            // 
+            this.redoToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.Redo_grey_16x;
+            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.redoToolStripMenuItem.Text = "Redo                    Ctrl+Y";
+            this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
+            // 
+            // addNewCompanyToolStripMenuItem
+            // 
+            this.addNewCompanyToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.Add_grey_16x;
+            this.addNewCompanyToolStripMenuItem.Name = "addNewCompanyToolStripMenuItem";
+            this.addNewCompanyToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.addNewCompanyToolStripMenuItem.Text = "Add Company      Ctrl+N";
+            this.addNewCompanyToolStripMenuItem.Click += new System.EventHandler(this.addNewCompanyToolStripMenuItem_Click);
+            // 
+            // editCompanyToolStripMenuItem
+            // 
+            this.editCompanyToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.Edit_grey_16x;
+            this.editCompanyToolStripMenuItem.Name = "editCompanyToolStripMenuItem";
+            this.editCompanyToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.editCompanyToolStripMenuItem.Text = "Edit Company       Ctrl+E";
+            // 
+            // exportToCSVToolStripMenuItem
+            // 
+            this.exportToCSVToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.ExportTableToFile_16x;
+            this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
+            this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.exportToCSVToolStripMenuItem.Text = "Export to CSV";
+            // 
+            // helpF1ToolStripMenuItem
+            // 
+            this.helpF1ToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.Question_16x;
+            this.helpF1ToolStripMenuItem.Name = "helpF1ToolStripMenuItem";
+            this.helpF1ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.helpF1ToolStripMenuItem.Text = "Help                          F1";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.ExclamationPoint_16x;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.aboutToolStripMenuItem.Text = "About";
             // 
             // frmMainMenu
             // 

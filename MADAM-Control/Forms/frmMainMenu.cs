@@ -48,7 +48,10 @@ namespace MADAM_Control
 
         private void programSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Enabled = false;
+            Form frmSettings = new Forms.frmSettings();
+            frmSettings.ShowDialog();
+            this.Enabled = true;
         }
 
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
