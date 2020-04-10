@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
+using MADAM_Control.Classes;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Driver.Core;
 
 namespace MADAM_Control
 {
@@ -29,6 +35,7 @@ namespace MADAM_Control
             frmSplash.Hide();
             this.Enabled = true;
             this.Focus();
+            connectToDb();
         }
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -39,6 +46,7 @@ namespace MADAM_Control
 
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -97,6 +105,27 @@ namespace MADAM_Control
             if (e.Control && e.KeyCode == Keys.N)
             {
                 addNewCompanyToolStripMenuItem_Click(this, e);
+            }
+        }
+
+        private void connectToDb()
+        {
+            try
+            {
+                Settings settings;
+                string savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                XmlSerializer mySerializer = new XmlSerializer(typeof(Settings));
+                FileStream myFileStream = new FileStream(savePath + "\\MADAMControl\\Settings.XML", FileMode.Open);
+
+                settings = (Settings)mySerializer.Deserialize(myFileStream);
+                var dbip = settings.dbip;
+                var client = new MongoClient("mongodb://MADAM-DB:27017");
+                var database = client.GetDatabase("MADAM-DB");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Failed to connect", "Could not connect to database, has the IP been set in settings?");
+                throw;
             }
         }
 
