@@ -33,8 +33,10 @@
             this.txtDBIP = new System.Windows.Forms.TextBox();
             this.lblDBIP = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblStartup = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.chkStartup = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@
             // 
             // txtDBIP
             // 
-            this.txtDBIP.Location = new System.Drawing.Point(75, 14);
+            this.txtDBIP.Location = new System.Drawing.Point(89, 14);
             this.txtDBIP.Name = "txtDBIP";
             this.txtDBIP.Size = new System.Drawing.Size(161, 20);
             this.txtDBIP.TabIndex = 0;
@@ -65,12 +67,24 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.chkStartup);
+            this.panel1.Controls.Add(this.lblStartup);
             this.panel1.Controls.Add(this.lblDBIP);
             this.panel1.Controls.Add(this.txtDBIP);
             this.panel1.Location = new System.Drawing.Point(15, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(312, 100);
             this.panel1.TabIndex = 3;
+            // 
+            // lblStartup
+            // 
+            this.lblStartup.AutoSize = true;
+            this.lblStartup.Location = new System.Drawing.Point(3, 46);
+            this.lblStartup.Name = "lblStartup";
+            this.lblStartup.Size = new System.Drawing.Size(79, 13);
+            this.lblStartup.TabIndex = 3;
+            this.lblStartup.Text = "Run on Startup";
+            this.lblStartup.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnSave
             // 
@@ -91,6 +105,15 @@
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // chkStartup
+            // 
+            this.chkStartup.AutoSize = true;
+            this.chkStartup.Location = new System.Drawing.Point(89, 46);
+            this.chkStartup.Name = "chkStartup";
+            this.chkStartup.Size = new System.Drawing.Size(15, 14);
+            this.chkStartup.TabIndex = 4;
+            this.chkStartup.UseVisualStyleBackColor = true;
             // 
             // frmSettings
             // 
@@ -120,5 +143,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblStartup;
+        private System.Windows.Forms.CheckBox chkStartup;
     }
 }

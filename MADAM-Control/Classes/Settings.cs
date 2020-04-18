@@ -10,6 +10,6 @@ namespace MADAM_Control.Classes
     public class Settings
     {
         public string dbip { get; set; }
-        
+        public bool startup { get; set; }
     }
 }

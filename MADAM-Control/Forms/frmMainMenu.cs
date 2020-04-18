@@ -118,6 +118,7 @@ namespace MADAM_Control
                 FileStream myFileStream = new FileStream(savePath + "\\MADAMControl\\Settings.XML", FileMode.Open);
 
                 settings = (Settings)mySerializer.Deserialize(myFileStream);
+                myFileStream.Close();
                 var dbip = settings.dbip;
                 var client = new MongoClient("mongodb://MADAM-DB:27017");
                 var database = client.GetDatabase("MADAM-DB");

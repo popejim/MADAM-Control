@@ -11,6 +11,7 @@ using MADAM_Control.Classes;
 using System.Xml.Serialization;
 using System.IO;
 using System.Net;
+using Microsoft.Win32;
 
 namespace MADAM_Control.Forms
 {
@@ -29,6 +30,8 @@ namespace MADAM_Control.Forms
             try
             {
                 settings.dbip = IPAddress.Parse(txtDBIP.Text).ToString();
+                settings.startup = chkStartup.Checked;
+                SetStartup();
             }
 
             catch
@@ -53,7 +56,7 @@ namespace MADAM_Control.Forms
             }
 
             MessageBox.Show("Settings Saved","Settings Saved");
-
+            this.Close();
 
         }
 
@@ -62,16 +65,42 @@ namespace MADAM_Control.Forms
             Settings settings;
 
             XmlSerializer mySerializer = new XmlSerializer(typeof(Settings));
-            FileStream myFileStream = new FileStream(savePath + "\\MADAMControl\\Settings.XML", FileMode.Open);
-
-            settings = (Settings)mySerializer.Deserialize(myFileStream);
-            txtDBIP.Text = settings.dbip;
-            myFileStream.Close();
+            using (FileStream myFileStream = new FileStream(savePath + "\\MADAMControl\\Settings.XML", FileMode.Open))
+            {
+                settings = (Settings)mySerializer.Deserialize(myFileStream);
+                txtDBIP.Text = settings.dbip;
+                if (settings.startup == true)
+                {
+                    chkStartup.Checked = true;
+                }
+                else
+                {
+                    chkStartup.Checked = false;
+                }
+                myFileStream.Close();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SetStartup()
+        {
+            RegistryKey rk = Registry.CurrentUser.OpenSubKey
+                ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+
+            if (chkStartup.Checked)
+                rk.SetValue("MADAM Server", Application.ExecutablePath);
+            else
+                rk.DeleteValue("MADAM Server", false);
+
         }
     }
 }
