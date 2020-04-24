@@ -80,6 +80,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Companies.cs" />
     <Compile Include="Classes\Settings.cs" />
     <Compile Include="Forms\frmSettings.cs">
       <SubType>Form</SubType>
