@@ -32,8 +32,8 @@
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtAddDescript = new System.Windows.Forms.TextBox();
             this.lblServerIP = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtServerIp = new System.Windows.Forms.MaskedTextBox();
+            this.btnTest = new System.Windows.Forms.Button();
             this.txtTestResults = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -71,21 +71,22 @@
             this.lblServerIP.TabIndex = 6;
             this.lblServerIP.Text = "Server IP Address";
             // 
-            // maskedTextBox1
+            // txtServerIp
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(107, 151);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(148, 20);
-            this.maskedTextBox1.TabIndex = 7;
+            this.txtServerIp.Location = new System.Drawing.Point(107, 151);
+            this.txtServerIp.Name = "txtServerIp";
+            this.txtServerIp.Size = new System.Drawing.Size(148, 20);
+            this.txtServerIp.TabIndex = 7;
             // 
-            // button1
+            // btnTest
             // 
-            this.button1.Location = new System.Drawing.Point(324, 151);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 41);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Test connection";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTest.Location = new System.Drawing.Point(324, 151);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(89, 41);
+            this.btnTest.TabIndex = 8;
+            this.btnTest.Text = "Test connection";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // txtTestResults
             // 
@@ -103,8 +104,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtTestResults);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.btnTest);
+            this.Controls.Add(this.txtServerIp);
             this.Controls.Add(this.lblServerIP);
             this.Controls.Add(this.txtAddDescript);
             this.Controls.Add(this.txtTitle);
@@ -121,8 +122,8 @@
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.TextBox txtAddDescript;
         private System.Windows.Forms.Label lblServerIP;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MaskedTextBox txtServerIp;
+        private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.TextBox txtTestResults;
     }
 }
