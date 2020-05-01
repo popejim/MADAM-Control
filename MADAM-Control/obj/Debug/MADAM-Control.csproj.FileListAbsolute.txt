@@ -127,3 +127,4 @@ C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\Snappy
 C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\System.Buffers.xml
 C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.exe.config
 C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.csproj.CopyComplete
+C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM_Control.Forms.frmAdd2.resources

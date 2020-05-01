@@ -21,5 +21,10 @@ namespace MADAM_Control.Forms
         {
 
         }
+
+        private void txtAddDescript_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

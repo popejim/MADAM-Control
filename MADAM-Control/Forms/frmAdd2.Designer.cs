@@ -28,12 +28,101 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdd2));
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.txtAddDescript = new System.Windows.Forms.TextBox();
+            this.lblServerIP = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtTestResults = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTitle.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle.Location = new System.Drawing.Point(12, 12);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(608, 24);
+            this.txtTitle.TabIndex = 4;
+            this.txtTitle.Text = "MADAM Control Application - Add New Company Wizard";
+            // 
+            // txtAddDescript
+            // 
+            this.txtAddDescript.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtAddDescript.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAddDescript.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtAddDescript.Location = new System.Drawing.Point(12, 60);
+            this.txtAddDescript.Multiline = true;
+            this.txtAddDescript.Name = "txtAddDescript";
+            this.txtAddDescript.ReadOnly = true;
+            this.txtAddDescript.Size = new System.Drawing.Size(656, 87);
+            this.txtAddDescript.TabIndex = 5;
+            this.txtAddDescript.Text = resources.GetString("txtAddDescript.Text");
+            // 
+            // lblServerIP
+            // 
+            this.lblServerIP.AutoSize = true;
+            this.lblServerIP.Location = new System.Drawing.Point(9, 154);
+            this.lblServerIP.Name = "lblServerIP";
+            this.lblServerIP.Size = new System.Drawing.Size(92, 13);
+            this.lblServerIP.TabIndex = 6;
+            this.lblServerIP.Text = "Server IP Address";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(107, 151);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(148, 20);
+            this.maskedTextBox1.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(324, 151);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 41);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Test connection";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // txtTestResults
+            // 
+            this.txtTestResults.BackColor = System.Drawing.SystemColors.Window;
+            this.txtTestResults.Location = new System.Drawing.Point(419, 151);
+            this.txtTestResults.Multiline = true;
+            this.txtTestResults.Name = "txtTestResults";
+            this.txtTestResults.ReadOnly = true;
+            this.txtTestResults.Size = new System.Drawing.Size(226, 206);
+            this.txtTestResults.TabIndex = 9;
+            // 
+            // frmAdd2
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtTestResults);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.lblServerIP);
+            this.Controls.Add(this.txtAddDescript);
+            this.Controls.Add(this.txtTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "frmAdd2";
             this.Text = "frmAdd2";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.TextBox txtAddDescript;
+        private System.Windows.Forms.Label lblServerIP;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtTestResults;
     }
 }
