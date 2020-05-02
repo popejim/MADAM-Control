@@ -11,5 +11,6 @@ namespace MADAM_Control.Classes
     {
         public string dbip { get; set; }
         public bool startup { get; set; }
+        
     }
 }

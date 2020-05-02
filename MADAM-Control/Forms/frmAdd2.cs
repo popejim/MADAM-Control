@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
+using System.Net.Sockets;
 
 namespace MADAM_Control.Forms
 {
@@ -21,12 +22,26 @@ namespace MADAM_Control.Forms
 
         private void btnTest_Click(object sender, EventArgs e)
         {
+            //tests connection to the server IP on port 42069
+            //first checks that the IP address enteres is valid
             bool validIp = IPAddress.TryParse(txtServerIp.Text, out serverIp);
             if (validIp)
 
             {
                 btnTest.Enabled = false;
                 txtTestResults.AppendText("Testing connection...");
+                TcpClient tcpClient = new TcpClient();
+                try
+                {
+                    tcpClient.Connect(serverIp, 42069);
+                    txtTestResults.AppendText(Environment.NewLine + string.Format("Connecting to {0}", serverIp));
+                }
+
+                catch
+                {
+                    txtTestResults.AppendText(Environment.NewLine + "Connection could not be established");
+                    btnTest.Enabled = true;
+                }
             }
             else
             {
