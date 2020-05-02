@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading;
 
 namespace MADAM_Control.Forms
 {
     public partial class frmAdd2 : Form
     {
+        private Thread _connectThread;
         public IPAddress serverIp;
         public frmAdd2()
         {
@@ -21,6 +23,14 @@ namespace MADAM_Control.Forms
         }
 
         private void btnTest_Click(object sender, EventArgs e)
+        {
+            _connectThread = new Thread(TestConnection);
+            _connectThread.Name = "Test Connection Thread";
+            _connectThread.IsBackground = true;
+            _connectThread.Start();
+        }
+
+        private void TestConnection()
         {
             //tests connection to the server IP on port 42069
             //first checks that the IP address enteres is valid
@@ -33,8 +43,15 @@ namespace MADAM_Control.Forms
                 TcpClient tcpClient = new TcpClient();
                 try
                 {
+                    byte[] data = new byte[1024];
                     tcpClient.Connect(serverIp, 42069);
                     txtTestResults.AppendText(Environment.NewLine + string.Format("Connecting to {0}", serverIp));
+                    NetworkStream stream = tcpClient.GetStream();
+                    stream.Read(data, 0, data.Length);
+                    string reply = Encoding.ASCII.GetString(data, 0, data.Length);
+                    txtTestResults.AppendText(Environment.NewLine + string.Format("Reply {0}", reply));
+                    stream.Close();
+                    tcpClient.Close();
                 }
 
                 catch
