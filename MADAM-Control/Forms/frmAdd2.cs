@@ -39,30 +39,48 @@ namespace MADAM_Control.Forms
 
             {
                 btnTest.Enabled = false;
-                txtTestResults.AppendText("Testing connection...");
+                AppendTextBox("Testing connection...");
                 TcpClient tcpClient = new TcpClient();
                 try
                 {
                     byte[] data = new byte[1024];
                     tcpClient.Connect(serverIp, 42069);
-                    txtTestResults.AppendText(Environment.NewLine + string.Format("Connecting to {0}", serverIp));
+                    AppendTextBox(Environment.NewLine + string.Format("Connecting to {0}", serverIp));
                     NetworkStream stream = tcpClient.GetStream();
                     stream.Read(data, 0, data.Length);
                     string reply = Encoding.ASCII.GetString(data, 0, data.Length);
-                    txtTestResults.AppendText(Environment.NewLine + string.Format("Reply {0}", reply));
+                    AppendTextBox(Environment.NewLine + string.Format("Reply {0}", reply));
                     stream.Close();
                     tcpClient.Close();
                 }
 
                 catch
                 {
-                    txtTestResults.AppendText(Environment.NewLine + "Connection could not be established");
+                    AppendTextBox(Environment.NewLine + "Connection could not be established");
                     btnTest.Enabled = true;
                 }
             }
             else
             {
                 MessageBox.Show("The IP Address entered is not valid, please try again");
+            }
+        }
+
+        public void AppendTextBox(string value)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action<string>(AppendTextBox), new object[] { value });
+                return;
+            }
+            txtTestResults.Text += value;
+        }
+
+        public void EnableBox(bool on)
+        {
+            if (InvokeRequired)
+            {
+
             }
         }
     }
