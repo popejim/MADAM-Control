@@ -16,7 +16,10 @@ namespace MADAM_Control.Forms
     public partial class frmAdd2 : Form
     {
         private Thread _connectThread;
+        private Thread _ListenThread;
         public IPAddress serverIp;
+
+        public TcpClient tcpClient = new TcpClient();
         public frmAdd2()
         {
             InitializeComponent();
@@ -28,6 +31,38 @@ namespace MADAM_Control.Forms
             _connectThread.Name = "Test Connection Thread";
             _connectThread.IsBackground = true;
             _connectThread.Start();
+            
+            _ListenThread = new Thread(ListenForServer);
+            _ListenThread.Name = "Listen Thread";
+            _ListenThread.IsBackground = true;
+            _ListenThread.Start();
+        }
+
+        public void ListenForServer()
+        {
+            //make endpoint for listener on localhost, uses port 42069
+            IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
+            IPAddress localIP = host.AddressList.FirstOrDefault(a => a.AddressFamily == AddressFamily.InterNetwork);
+            IPEndPoint localEndPoint = new IPEndPoint(IPAddress.Any, 42069);
+
+            //Make TCP/IP socket
+            Socket listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+            try
+            {
+                listener.Bind(localEndPoint);
+                listener.Listen(100);
+                int keepGoing = 1;
+                while (keepGoing == 1)
+                {
+                    listener.BeginAccept(new AsyncCallback(ReplyToServer), listener);
+                }
+            }
+
+            catch (Exception e)
+            {
+                Console.WriteLine("Unexpected exception : {0}", e.ToString());
+            }
         }
 
         private void TestConnection()
@@ -38,26 +73,21 @@ namespace MADAM_Control.Forms
             if (validIp)
 
             {
-                btnTest.Enabled = false;
+                EnableBox(false);
                 AppendTextBox("Testing connection...");
-                TcpClient tcpClient = new TcpClient();
                 try
                 {
-                    byte[] data = new byte[1024];
-                    tcpClient.Connect(serverIp, 42069);
+                    byte[] data = new byte[256];
+                    tcpClient.Connect(serverIp, 42069);                    
                     AppendTextBox(Environment.NewLine + string.Format("Connecting to {0}", serverIp));
-                    NetworkStream stream = tcpClient.GetStream();
-                    stream.Read(data, 0, data.Length);
-                    string reply = Encoding.ASCII.GetString(data, 0, data.Length);
-                    AppendTextBox(Environment.NewLine + string.Format("Reply {0}", reply));
-                    stream.Close();
-                    tcpClient.Close();
+                    tcpClient.Dispose();
+                    EnableBox(true);
                 }
 
                 catch
                 {
                     AppendTextBox(Environment.NewLine + "Connection could not be established");
-                    btnTest.Enabled = true;
+                    EnableBox(true);
                 }
             }
             else
@@ -78,10 +108,28 @@ namespace MADAM_Control.Forms
 
         public void EnableBox(bool on)
         {
-            if (InvokeRequired)
+            if (btnTest.InvokeRequired)
             {
-
+                this.Invoke(new Action<bool>(EnableBox), new object[] { on });
+                return;
             }
+            else if (on == true)
+            {
+                btnTest.Enabled = true;
+                return;
+            }
+            else if (on == false)
+            {
+                btnTest.Enabled = false;
+                return;
+            }
+        }
+
+        private void ReplyToServer(IAsyncResult ar)
+        {
+            AppendTextBox("check");
+
+            tcpClient.Close();
         }
     }
 }
