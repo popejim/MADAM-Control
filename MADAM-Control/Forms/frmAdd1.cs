@@ -26,5 +26,10 @@ namespace MADAM_Control.Forms
         {
 
         }
+
+        public string GetText()
+        {
+            return txtCoName.Text;
+        }
     }
 }

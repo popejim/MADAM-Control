@@ -72,6 +72,15 @@ namespace MADAM_Control.Forms
         }
         private void Next()
         {
+            if (top == 0)
+            {
+                frmAdd1 temp = (frmAdd1)frm[top];
+                if (temp.GetText() == "")
+                {
+                    MessageBox.Show("New Company must have a name!");
+                    return;
+                }
+            }
 
             top++;
             if (top >= count)

@@ -130,6 +130,9 @@ namespace MADAM_Control
             }
         }
 
-
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            addNewCompanyToolStripMenuItem_Click(this, e);
+        }
     }
 }
