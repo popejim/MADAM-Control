@@ -27,15 +27,11 @@ namespace MADAM_Control.Forms
 
         private void btnTest_Click(object sender, EventArgs e)
         {
+            //spawn connection thread
             _connectThread = new Thread(TestConnection);
             _connectThread.Name = "Test Connection Thread";
             _connectThread.IsBackground = true;
             _connectThread.Start();
-            
-            _ListenThread = new Thread(ListenForServer);
-            _ListenThread.Name = "Listen Thread";
-            _ListenThread.IsBackground = true;
-            _ListenThread.Start();
         }
 
         public void ListenForServer()
@@ -48,6 +44,7 @@ namespace MADAM_Control.Forms
             //Make TCP/IP socket
             Socket listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
+            //binds socket and loops until a request comes in
             try
             {
                 listener.Bind(localEndPoint);
@@ -55,6 +52,7 @@ namespace MADAM_Control.Forms
                 int keepGoing = 1;
                 while (keepGoing == 1)
                 {
+                    //on connection, run ReplyToServer method
                     listener.BeginAccept(new AsyncCallback(ReplyToServer), listener);
                 }
             }
@@ -68,19 +66,24 @@ namespace MADAM_Control.Forms
         private void TestConnection()
         {
             //tests connection to the server IP on port 42069
-            //first checks that the IP address enteres is valid
+            //first checks that the IP address entered is valid
             bool validIp = IPAddress.TryParse(txtServerIp.Text, out serverIp);
             if (validIp)
-
             {
                 EnableBox(false);
                 AppendTextBox("Testing connection...");
                 try
                 {
+                    //sends a connection request then closes the connection and starts listening for reply
                     byte[] data = new byte[256];
-                    tcpClient.Connect(serverIp, 42069);                    
+                    tcpClient.Connect(serverIp, 42070);                    
                     AppendTextBox(Environment.NewLine + string.Format("Connecting to {0}", serverIp));
                     tcpClient.Dispose();
+                    tcpClient.Close();
+                    _ListenThread = new Thread(ListenForServer);
+                    _ListenThread.Name = "Listen Thread";
+                    _ListenThread.IsBackground = true;
+                    _ListenThread.Start();
                     EnableBox(true);
                 }
 
@@ -88,6 +91,10 @@ namespace MADAM_Control.Forms
                 {
                     AppendTextBox(Environment.NewLine + "Connection could not be established");
                     EnableBox(true);
+                    _ListenThread = new Thread(ListenForServer);
+                    _ListenThread.Name = "Listen Thread";
+                    _ListenThread.IsBackground = true;
+                    _ListenThread.Start();
                 }
             }
             else
@@ -98,6 +105,7 @@ namespace MADAM_Control.Forms
 
         public void AppendTextBox(string value)
         {
+            //used for safe cross thread control of control items
             if (InvokeRequired)
             {
                 this.Invoke(new Action<string>(AppendTextBox), new object[] { value });
@@ -108,6 +116,7 @@ namespace MADAM_Control.Forms
 
         public void EnableBox(bool on)
         {
+            //crossthread safe method for setting control box
             if (btnTest.InvokeRequired)
             {
                 this.Invoke(new Action<bool>(EnableBox), new object[] { on });
@@ -127,9 +136,15 @@ namespace MADAM_Control.Forms
 
         private void ReplyToServer(IAsyncResult ar)
         {
-            AppendTextBox("check");
-
+            //fires on recieving a connection
+            AppendTextBox(Environment.NewLine + "Connection Successful!");
+            EnableBox(false);
             tcpClient.Close();
+        }
+
+        private void txtAddDescript_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
