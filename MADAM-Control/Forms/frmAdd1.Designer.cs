@@ -40,9 +40,9 @@
             this.lblTown = new System.Windows.Forms.Label();
             this.txtTown = new System.Windows.Forms.TextBox();
             this.lblPostcode = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPost = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtTitle
@@ -144,12 +144,12 @@
             this.lblPostcode.TabIndex = 12;
             this.lblPostcode.Text = "Postcode";
             // 
-            // textBox2
+            // txtPost
             // 
-            this.textBox2.Location = new System.Drawing.Point(106, 299);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 13;
+            this.txtPost.Location = new System.Drawing.Point(106, 299);
+            this.txtPost.Name = "txtPost";
+            this.txtPost.Size = new System.Drawing.Size(100, 20);
+            this.txtPost.TabIndex = 13;
             // 
             // lblPhone
             // 
@@ -160,12 +160,12 @@
             this.lblPhone.TabIndex = 14;
             this.lblPhone.Text = "Phone No";
             // 
-            // textBox3
+            // txtPhone
             // 
-            this.textBox3.Location = new System.Drawing.Point(106, 326);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(201, 20);
-            this.textBox3.TabIndex = 15;
+            this.txtPhone.Location = new System.Drawing.Point(106, 326);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(201, 20);
+            this.txtPhone.TabIndex = 15;
             // 
             // frmAdd1
             // 
@@ -173,9 +173,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.lblPhone);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPost);
             this.Controls.Add(this.lblPostcode);
             this.Controls.Add(this.txtTown);
             this.Controls.Add(this.lblTown);
@@ -213,8 +213,8 @@
         private System.Windows.Forms.Label lblTown;
         private System.Windows.Forms.TextBox txtTown;
         private System.Windows.Forms.Label lblPostcode;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPost;
         private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPhone;
     }
 }

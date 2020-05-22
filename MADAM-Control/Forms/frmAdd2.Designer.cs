@@ -35,6 +35,7 @@
             this.txtServerIp = new System.Windows.Forms.MaskedTextBox();
             this.txtTestResults = new System.Windows.Forms.TextBox();
             this.btnTest = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtTitle
@@ -99,11 +100,22 @@
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(699, 414);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(89, 24);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "Save and Exit";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmAdd2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtTestResults);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.txtServerIp);
@@ -126,5 +138,6 @@
         private System.Windows.Forms.MaskedTextBox txtServerIp;
         private System.Windows.Forms.TextBox txtTestResults;
         private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Button btnSave;
     }
 }

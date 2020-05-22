@@ -80,6 +80,8 @@ namespace MADAM_Control.Forms
                     MessageBox.Show("New Company must have a name!");
                     return;
                 }
+
+                Classes.Companies coToAdd = temp.GetInfo();
             }
 
             top++;

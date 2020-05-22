@@ -31,5 +31,18 @@ namespace MADAM_Control.Forms
         {
             return txtCoName.Text;
         }
+
+        public MADAM_Control.Classes.Companies GetInfo()
+        {
+            Classes.Companies temp = new Classes.Companies();
+            temp.CompAddrLine1 = txtAddr1.Text;
+            temp.CompAddrLine2 = txtAddr2.Text;
+            temp.CompName = txtCoName.Text;
+            temp.CompPostcode = txtPost.Text;
+            temp.CompTelNo = txtPhone.Text;
+
+            return temp;
+
+        }
     }
 }

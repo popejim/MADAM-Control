@@ -7,7 +7,7 @@ using System.Net;
 
 namespace MADAM_Control.Classes
 {
-    class Companies
+    public class Companies
     {
         public string CompName { get; set; }
         public string CompAddrLine1 { get; set; }
