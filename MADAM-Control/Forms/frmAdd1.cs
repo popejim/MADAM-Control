@@ -29,11 +29,13 @@ namespace MADAM_Control.Forms
 
         public string GetText()
         {
+            //reutrns the company name, checks for not blank
             return txtCoName.Text;
         }
 
         public MADAM_Control.Classes.Companies GetInfo()
         {
+            //returns all information from the form as a companies object
             Classes.Companies temp = new Classes.Companies();
             temp.CompAddrLine1 = txtAddr1.Text;
             temp.CompAddrLine2 = txtAddr2.Text;
