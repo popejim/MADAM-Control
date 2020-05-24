@@ -56,6 +56,20 @@
             this.dropCompanyList = new System.Windows.Forms.ComboBox();
             this.pictBoxLogo = new System.Windows.Forms.PictureBox();
             this.btnAddNew = new System.Windows.Forms.Button();
+            this.lstDevices = new System.Windows.Forms.ListBox();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.txtPost = new System.Windows.Forms.TextBox();
+            this.lblPostcode = new System.Windows.Forms.Label();
+            this.txtTown = new System.Windows.Forms.TextBox();
+            this.lblTown = new System.Windows.Forms.Label();
+            this.txtAddr2 = new System.Windows.Forms.TextBox();
+            this.lblAddr2 = new System.Windows.Forms.Label();
+            this.txtAddr1 = new System.Windows.Forms.TextBox();
+            this.lblAddr1 = new System.Windows.Forms.Label();
+            this.txtCoName = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxLogo)).BeginInit();
             this.SuspendLayout();
@@ -198,26 +212,26 @@
             this.allCompaniesToolStripMenuItem,
             this.selectedCompanyToolStripMenuItem});
             this.generateReportToolStripMenuItem.Name = "generateReportToolStripMenuItem";
-            this.generateReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.generateReportToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.generateReportToolStripMenuItem.Text = "Generate Report";
             // 
             // allCompaniesToolStripMenuItem
             // 
             this.allCompaniesToolStripMenuItem.Name = "allCompaniesToolStripMenuItem";
-            this.allCompaniesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.allCompaniesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.allCompaniesToolStripMenuItem.Text = "All Companies";
             // 
             // selectedCompanyToolStripMenuItem
             // 
             this.selectedCompanyToolStripMenuItem.Name = "selectedCompanyToolStripMenuItem";
-            this.selectedCompanyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.selectedCompanyToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.selectedCompanyToolStripMenuItem.Text = "Selected Company";
             // 
             // exportToCSVToolStripMenuItem
             // 
             this.exportToCSVToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.ExportTableToFile_16x;
             this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
-            this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.exportToCSVToolStripMenuItem.Text = "Export to CSV";
             // 
             // helpToolStripMenuItem
@@ -282,7 +296,7 @@
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(15, 437);
+            this.btnAddNew.Location = new System.Drawing.Point(326, 53);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(75, 46);
             this.btnAddNew.TabIndex = 4;
@@ -290,11 +304,138 @@
             this.btnAddNew.UseVisualStyleBackColor = true;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
+            // lstDevices
+            // 
+            this.lstDevices.FormattingEnabled = true;
+            this.lstDevices.Location = new System.Drawing.Point(326, 122);
+            this.lstDevices.Name = "lstDevices";
+            this.lstDevices.Size = new System.Drawing.Size(236, 303);
+            this.lstDevices.TabIndex = 5;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(418, 53);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 46);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Text = "Edit Company";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(106, 266);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(201, 20);
+            this.txtPhone.TabIndex = 27;
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Location = new System.Drawing.Point(11, 269);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(55, 13);
+            this.lblPhone.TabIndex = 26;
+            this.lblPhone.Text = "Phone No";
+            // 
+            // txtPost
+            // 
+            this.txtPost.Location = new System.Drawing.Point(106, 239);
+            this.txtPost.Name = "txtPost";
+            this.txtPost.Size = new System.Drawing.Size(100, 20);
+            this.txtPost.TabIndex = 25;
+            // 
+            // lblPostcode
+            // 
+            this.lblPostcode.AutoSize = true;
+            this.lblPostcode.Location = new System.Drawing.Point(12, 242);
+            this.lblPostcode.Name = "lblPostcode";
+            this.lblPostcode.Size = new System.Drawing.Size(52, 13);
+            this.lblPostcode.TabIndex = 24;
+            this.lblPostcode.Text = "Postcode";
+            // 
+            // txtTown
+            // 
+            this.txtTown.Location = new System.Drawing.Point(106, 213);
+            this.txtTown.Name = "txtTown";
+            this.txtTown.Size = new System.Drawing.Size(201, 20);
+            this.txtTown.TabIndex = 23;
+            // 
+            // lblTown
+            // 
+            this.lblTown.AutoSize = true;
+            this.lblTown.Location = new System.Drawing.Point(12, 216);
+            this.lblTown.Name = "lblTown";
+            this.lblTown.Size = new System.Drawing.Size(37, 13);
+            this.lblTown.TabIndex = 22;
+            this.lblTown.Text = "Town ";
+            // 
+            // txtAddr2
+            // 
+            this.txtAddr2.Location = new System.Drawing.Point(106, 187);
+            this.txtAddr2.Name = "txtAddr2";
+            this.txtAddr2.Size = new System.Drawing.Size(201, 20);
+            this.txtAddr2.TabIndex = 21;
+            // 
+            // lblAddr2
+            // 
+            this.lblAddr2.AutoSize = true;
+            this.lblAddr2.Location = new System.Drawing.Point(12, 190);
+            this.lblAddr2.Name = "lblAddr2";
+            this.lblAddr2.Size = new System.Drawing.Size(77, 13);
+            this.lblAddr2.TabIndex = 20;
+            this.lblAddr2.Text = "Address Line 2";
+            // 
+            // txtAddr1
+            // 
+            this.txtAddr1.Location = new System.Drawing.Point(106, 161);
+            this.txtAddr1.Name = "txtAddr1";
+            this.txtAddr1.Size = new System.Drawing.Size(201, 20);
+            this.txtAddr1.TabIndex = 19;
+            // 
+            // lblAddr1
+            // 
+            this.lblAddr1.AutoSize = true;
+            this.lblAddr1.Location = new System.Drawing.Point(12, 164);
+            this.lblAddr1.Name = "lblAddr1";
+            this.lblAddr1.Size = new System.Drawing.Size(77, 13);
+            this.lblAddr1.TabIndex = 18;
+            this.lblAddr1.Text = "Address Line 1";
+            // 
+            // txtCoName
+            // 
+            this.txtCoName.Location = new System.Drawing.Point(106, 122);
+            this.txtCoName.Name = "txtCoName";
+            this.txtCoName.Size = new System.Drawing.Size(201, 20);
+            this.txtCoName.TabIndex = 17;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(12, 125);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(82, 13);
+            this.lblName.TabIndex = 16;
+            this.lblName.Text = "Company Name";
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 518);
+            this.Controls.Add(this.txtPhone);
+            this.Controls.Add(this.lblPhone);
+            this.Controls.Add(this.txtPost);
+            this.Controls.Add(this.lblPostcode);
+            this.Controls.Add(this.txtTown);
+            this.Controls.Add(this.lblTown);
+            this.Controls.Add(this.txtAddr2);
+            this.Controls.Add(this.lblAddr2);
+            this.Controls.Add(this.txtAddr1);
+            this.Controls.Add(this.lblAddr1);
+            this.Controls.Add(this.txtCoName);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.lstDevices);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.dropCompanyList);
             this.Controls.Add(this.lblCompaniesList);
@@ -342,5 +483,19 @@
         private System.Windows.Forms.ToolStripMenuItem selectedCompanyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportToCSVToolStripMenuItem;
         private System.Windows.Forms.Button btnAddNew;
+        private System.Windows.Forms.ListBox lstDevices;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.TextBox txtPost;
+        private System.Windows.Forms.Label lblPostcode;
+        private System.Windows.Forms.TextBox txtTown;
+        private System.Windows.Forms.Label lblTown;
+        private System.Windows.Forms.TextBox txtAddr2;
+        private System.Windows.Forms.Label lblAddr2;
+        private System.Windows.Forms.TextBox txtAddr1;
+        private System.Windows.Forms.Label lblAddr1;
+        private System.Windows.Forms.TextBox txtCoName;
+        private System.Windows.Forms.Label lblName;
     }
 }

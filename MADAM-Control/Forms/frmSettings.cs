@@ -65,19 +65,22 @@ namespace MADAM_Control.Forms
             Settings settings;
 
             XmlSerializer mySerializer = new XmlSerializer(typeof(Settings));
-            using (FileStream myFileStream = new FileStream(savePath + "\\MADAMControl\\Settings.XML", FileMode.Open))
+            if (Directory.Exists(savePath + "\\MADAMControl\\"))
             {
-                settings = (Settings)mySerializer.Deserialize(myFileStream);
-                txtDBIP.Text = settings.dbip;
-                if (settings.startup == true)
+                using (FileStream myFileStream = new FileStream(savePath + "\\MADAMControl\\Settings.XML", FileMode.Open))
                 {
-                    chkStartup.Checked = true;
+                    settings = (Settings)mySerializer.Deserialize(myFileStream);
+                    txtDBIP.Text = settings.dbip;
+                    if (settings.startup == true)
+                    {
+                        chkStartup.Checked = true;
+                    }
+                    else
+                    {
+                        chkStartup.Checked = false;
+                    }
+                    myFileStream.Close();
                 }
-                else
-                {
-                    chkStartup.Checked = false;
-                }
-                myFileStream.Close();
             }
         }
 
