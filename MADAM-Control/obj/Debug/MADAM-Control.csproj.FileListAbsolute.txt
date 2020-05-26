@@ -131,7 +131,6 @@ C:\Users\jimhe\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM_
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MADAM-Control.exe.config
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.exe
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.pdb
-C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\mongocrypt.dll
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MADAM-Control.exe
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MADAM-Control.pdb
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\Crc32C.NET.dll
@@ -139,7 +138,6 @@ C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\DnsClie
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MongoDB.Bson.dll
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MongoDB.Driver.Core.dll
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MongoDB.Driver.dll
-C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MongoDB.Libmongocrypt.dll
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\SharpCompress.dll
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\Snappy.NET.dll
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\System.Buffers.dll

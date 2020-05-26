@@ -18,6 +18,7 @@ namespace MADAM_Control.Classes
         public IPAddress CompServerIp { get; set; }
         public string CompContactName { get; set; }
         public string CompContactEmail { get; set; }
-            
+        public List<Device> DeviceList { get; set; }
+
     }
 }
