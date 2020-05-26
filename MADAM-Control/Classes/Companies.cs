@@ -16,6 +16,7 @@ namespace MADAM_Control.Classes
         public string CompAddrLine1 { get; set; }
         public string CompAddrLine2 { get; set; }
         public string CompAddrLine3 { get; set; }
+        public string CompTown { get; set; }
         public string CompPostcode { get; set; }
         public string CompTelNo { get; set; }
         public string CompServerIp { get; set; }

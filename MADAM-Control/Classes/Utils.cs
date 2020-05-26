@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
@@ -10,7 +12,34 @@ namespace MADAM_Control.Classes
 {
     public class Utils
     {
+        public static List<Device> returnList;
+        public static string remoteIp;
+        public static List<Device> getRemoteDevices(string ip)
+        {
+            TcpClient probeServer = new TcpClient();
+            remoteIp = ip;
+            probeServer.BeginConnect(ip, 42060,getDevice,probeServer);
+            probeServer.Close();
+            List<Device> temp = returnDevices();
+            return temp;
+        }
 
+        public static void getDevice(IAsyncResult ar)
+        {
+            TcpClient listener = (TcpClient)ar.AsyncState;
+            TcpClient client = new TcpClient(remoteIp, 42063);
+            NetworkStream stream = client.GetStream();
+            XmlSerializer mySerializer = new XmlSerializer(typeof(List<Device>));
+            List<Device> inList = (List<Device>)mySerializer.Deserialize(stream);
+            returnList = inList;
+            stream.Close();
+            client.Close();
+        }
+
+        public static List<Device> returnDevices()
+        {
+            return returnList;
+        }
         public static void saveAllCompany(List<Companies> listIn)
         {
             string savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);

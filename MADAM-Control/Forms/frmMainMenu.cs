@@ -13,6 +13,7 @@ using MADAM_Control.Classes;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Core;
+using System.Net.Sockets;
 
 namespace MADAM_Control
 {
@@ -20,7 +21,7 @@ namespace MADAM_Control
     {
 
         public List<Companies> currentCompanies;
-
+        public int selectedCompany;
         public frmMainMenu()
         {
             InitializeComponent();
@@ -82,19 +83,54 @@ namespace MADAM_Control
             }
         }
 
+        private void lstDevices_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            populateDeviceDetails(lstDevices.SelectedIndex);
+        }
+
+        public void populateDeviceDetails(int currentSelection)
+        {
+            lstDetails.Items.Clear();
+            lstUsers.Items.Clear();
+            Companies currCompany = currentCompanies[selectedCompany];
+            Device currDevice = currCompany.DeviceList[currentSelection];
+            lstDetails.Items.Add(currDevice.name);
+            lstDetails.Items.Add(currDevice.ipAddr);
+            lstDetails.Items.Add(currDevice.osVersion);
+            foreach (Users u in currDevice.UserList)
+            {
+                lstUsers.Items.Add(u);
+            }
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             populateText(dropCompanyList.SelectedIndex);
+            populateDeviceList(dropCompanyList.SelectedIndex);
+            selectedCompany = dropCompanyList.SelectedIndex;
         }
 
+        public void populateDeviceList(int currentSelection)
+        {
+            lstDevices.Items.Clear();
+            Companies currCompany = currentCompanies[currentSelection];
+            foreach (Device d in currCompany.DeviceList)
+            {
+                lstDevices.Items.Add(d.name);
+            }
+        }
         public void populateText(int currentSelection)
         {
-            Classes.Companies currCompany = currentCompanies[currentSelection];
+            Companies currCompany = currentCompanies[currentSelection];
             txtCoName.Text = currCompany.CompName;
             txtAddr1.Text = currCompany.CompAddrLine1;
             txtAddr2.Text = currCompany.CompAddrLine2;
             txtAddr3.Text = currCompany.CompAddrLine3;
+            txtContactName.Text = currCompany.CompContactName;
             txtContactEmail.Text = currCompany.CompContactEmail;
+            txtTown.Text = currCompany.CompTown;
+            txtPost.Text = currCompany.CompPostcode;
+            txtPhone.Text = currCompany.CompTelNo;
         }
         private void programSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -175,6 +211,14 @@ namespace MADAM_Control
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             addNewCompanyToolStripMenuItem_Click(this, e);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Companies currCompany = currentCompanies[dropCompanyList.SelectedIndex];
+            
+            List<Device> temp = Classes.Utils.getRemoteDevices(currCompany.CompServerIp);
+            
         }
     }
 }

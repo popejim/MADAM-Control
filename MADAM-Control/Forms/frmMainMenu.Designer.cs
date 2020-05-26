@@ -78,6 +78,10 @@
             this.lblAddr1 = new System.Windows.Forms.Label();
             this.txtCoName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lstUsers = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxLogo)).BeginInit();
             this.SuspendLayout();
@@ -296,9 +300,9 @@
             this.pictBoxLogo.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictBoxLogo.BackgroundImage = global::MADAM_Control.Properties.Resources.MADAM_logo;
             this.pictBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictBoxLogo.Location = new System.Drawing.Point(805, 27);
+            this.pictBoxLogo.Location = new System.Drawing.Point(24, 386);
             this.pictBoxLogo.Name = "pictBoxLogo";
-            this.pictBoxLogo.Size = new System.Drawing.Size(144, 137);
+            this.pictBoxLogo.Size = new System.Drawing.Size(92, 95);
             this.pictBoxLogo.TabIndex = 1;
             this.pictBoxLogo.TabStop = false;
             // 
@@ -315,10 +319,11 @@
             // lstDevices
             // 
             this.lstDevices.FormattingEnabled = true;
-            this.lstDevices.Location = new System.Drawing.Point(326, 122);
+            this.lstDevices.Location = new System.Drawing.Point(326, 135);
             this.lstDevices.Name = "lstDevices";
-            this.lstDevices.Size = new System.Drawing.Size(207, 303);
+            this.lstDevices.Size = new System.Drawing.Size(292, 368);
             this.lstDevices.TabIndex = 5;
+            this.lstDevices.SelectedIndexChanged += new System.EventHandler(this.lstDevices_SelectedIndexChanged);
             // 
             // btnEdit
             // 
@@ -332,9 +337,9 @@
             // lstDetails
             // 
             this.lstDetails.FormattingEnabled = true;
-            this.lstDetails.Location = new System.Drawing.Point(568, 122);
+            this.lstDetails.Location = new System.Drawing.Point(645, 135);
             this.lstDetails.Name = "lstDetails";
-            this.lstDetails.Size = new System.Drawing.Size(207, 303);
+            this.lstDetails.Size = new System.Drawing.Size(292, 173);
             this.lstDetails.TabIndex = 28;
             // 
             // btnUpdate
@@ -345,6 +350,7 @@
             this.btnUpdate.TabIndex = 29;
             this.btnUpdate.Text = "Update Details";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtContactEmail
             // 
@@ -490,11 +496,50 @@
             this.lblName.TabIndex = 30;
             this.lblName.Text = "Company Name";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(326, 116);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(138, 13);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "Selected Company Devices";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(645, 115);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 13);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "Selected Device Details";
+            // 
+            // lstUsers
+            // 
+            this.lstUsers.FormattingEnabled = true;
+            this.lstUsers.Location = new System.Drawing.Point(645, 330);
+            this.lstUsers.Name = "lstUsers";
+            this.lstUsers.Size = new System.Drawing.Size(292, 173);
+            this.lstUsers.TabIndex = 50;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(645, 314);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(116, 13);
+            this.label5.TabIndex = 51;
+            this.label5.Text = "Selected Device Users";
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 518);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lstUsers);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtContactEmail);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtContactName);
@@ -586,5 +631,9 @@
         private System.Windows.Forms.Label lblAddr1;
         private System.Windows.Forms.TextBox txtCoName;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox lstUsers;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -40,6 +40,7 @@ namespace MADAM_Control.Forms
             temp.CompAddrLine1 = txtAddr1.Text;
             temp.CompAddrLine2 = txtAddr2.Text;
             temp.CompAddrLine3 = txtAddr3.Text;
+            temp.CompTown = txtTown.Text;
             temp.CompName = txtCoName.Text;
             temp.CompPostcode = txtPost.Text;
             temp.CompTelNo = txtPhone.Text;
