@@ -33,15 +33,18 @@ namespace MADAM_Control.Forms
             return txtCoName.Text;
         }
 
-        public MADAM_Control.Classes.Companies GetInfo()
+        public Classes.Companies GetInfo()
         {
             //returns all information from the form as a companies object
             Classes.Companies temp = new Classes.Companies();
             temp.CompAddrLine1 = txtAddr1.Text;
             temp.CompAddrLine2 = txtAddr2.Text;
+            temp.CompAddrLine3 = txtAddr3.Text;
             temp.CompName = txtCoName.Text;
             temp.CompPostcode = txtPost.Text;
             temp.CompTelNo = txtPhone.Text;
+            temp.CompContactEmail = txtContactEmail.Text;
+            temp.CompContactName = txtContactName.Text;
 
             return temp;
 

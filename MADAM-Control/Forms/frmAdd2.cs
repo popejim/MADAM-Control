@@ -149,7 +149,28 @@ namespace MADAM_Control.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Classes.Companies newCo = new Classes.Companies();
+            newCo.CompServerIp = txtServerIp.Text;
+        }
 
+        private void frmAdd2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public IPAddress GetIp()
+        {
+            if (txtServerIp.Text != null)
+            {
+                IPAddress returnIp = IPAddress.Parse(txtServerIp.Text);
+                return returnIp;
+            }
+            else
+            {
+                IPAddress returnIp = null;
+                return returnIp;
+            }
+            
         }
     }
 }

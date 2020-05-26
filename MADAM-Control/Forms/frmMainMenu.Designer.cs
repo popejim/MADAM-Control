@@ -58,6 +58,14 @@
             this.btnAddNew = new System.Windows.Forms.Button();
             this.lstDevices = new System.Windows.Forms.ListBox();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.lstDetails = new System.Windows.Forms.ListBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.txtContactEmail = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtContactName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtAddr3 = new System.Windows.Forms.TextBox();
+            this.lblAddr3 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
             this.txtPost = new System.Windows.Forms.TextBox();
@@ -309,7 +317,7 @@
             this.lstDevices.FormattingEnabled = true;
             this.lstDevices.Location = new System.Drawing.Point(326, 122);
             this.lstDevices.Name = "lstDevices";
-            this.lstDevices.Size = new System.Drawing.Size(236, 303);
+            this.lstDevices.Size = new System.Drawing.Size(207, 303);
             this.lstDevices.TabIndex = 5;
             // 
             // btnEdit
@@ -321,100 +329,165 @@
             this.btnEdit.Text = "Edit Company";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
+            // lstDetails
+            // 
+            this.lstDetails.FormattingEnabled = true;
+            this.lstDetails.Location = new System.Drawing.Point(568, 122);
+            this.lstDetails.Name = "lstDetails";
+            this.lstDetails.Size = new System.Drawing.Size(207, 303);
+            this.lstDetails.TabIndex = 28;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(511, 53);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(73, 46);
+            this.btnUpdate.TabIndex = 29;
+            this.btnUpdate.Text = "Update Details";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // txtContactEmail
+            // 
+            this.txtContactEmail.Location = new System.Drawing.Point(106, 341);
+            this.txtContactEmail.Name = "txtContactEmail";
+            this.txtContactEmail.Size = new System.Drawing.Size(201, 20);
+            this.txtContactEmail.TabIndex = 47;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 344);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Contact Email";
+            // 
+            // txtContactName
+            // 
+            this.txtContactName.Location = new System.Drawing.Point(106, 315);
+            this.txtContactName.Name = "txtContactName";
+            this.txtContactName.Size = new System.Drawing.Size(201, 20);
+            this.txtContactName.TabIndex = 45;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 318);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Contact Name";
+            // 
+            // txtAddr3
+            // 
+            this.txtAddr3.Location = new System.Drawing.Point(106, 210);
+            this.txtAddr3.Name = "txtAddr3";
+            this.txtAddr3.Size = new System.Drawing.Size(201, 20);
+            this.txtAddr3.TabIndex = 43;
+            // 
+            // lblAddr3
+            // 
+            this.lblAddr3.AutoSize = true;
+            this.lblAddr3.Location = new System.Drawing.Point(12, 213);
+            this.lblAddr3.Name = "lblAddr3";
+            this.lblAddr3.Size = new System.Drawing.Size(77, 13);
+            this.lblAddr3.TabIndex = 42;
+            this.lblAddr3.Text = "Address Line 3";
+            // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(106, 266);
+            this.txtPhone.Location = new System.Drawing.Point(106, 289);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(201, 20);
-            this.txtPhone.TabIndex = 27;
+            this.txtPhone.TabIndex = 41;
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(11, 269);
+            this.lblPhone.Location = new System.Drawing.Point(12, 292);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(55, 13);
-            this.lblPhone.TabIndex = 26;
+            this.lblPhone.TabIndex = 40;
             this.lblPhone.Text = "Phone No";
             // 
             // txtPost
             // 
-            this.txtPost.Location = new System.Drawing.Point(106, 239);
+            this.txtPost.Location = new System.Drawing.Point(106, 262);
             this.txtPost.Name = "txtPost";
             this.txtPost.Size = new System.Drawing.Size(100, 20);
-            this.txtPost.TabIndex = 25;
+            this.txtPost.TabIndex = 39;
             // 
             // lblPostcode
             // 
             this.lblPostcode.AutoSize = true;
-            this.lblPostcode.Location = new System.Drawing.Point(12, 242);
+            this.lblPostcode.Location = new System.Drawing.Point(12, 265);
             this.lblPostcode.Name = "lblPostcode";
             this.lblPostcode.Size = new System.Drawing.Size(52, 13);
-            this.lblPostcode.TabIndex = 24;
+            this.lblPostcode.TabIndex = 38;
             this.lblPostcode.Text = "Postcode";
             // 
             // txtTown
             // 
-            this.txtTown.Location = new System.Drawing.Point(106, 213);
+            this.txtTown.Location = new System.Drawing.Point(106, 236);
             this.txtTown.Name = "txtTown";
             this.txtTown.Size = new System.Drawing.Size(201, 20);
-            this.txtTown.TabIndex = 23;
+            this.txtTown.TabIndex = 37;
             // 
             // lblTown
             // 
             this.lblTown.AutoSize = true;
-            this.lblTown.Location = new System.Drawing.Point(12, 216);
+            this.lblTown.Location = new System.Drawing.Point(12, 239);
             this.lblTown.Name = "lblTown";
             this.lblTown.Size = new System.Drawing.Size(37, 13);
-            this.lblTown.TabIndex = 22;
+            this.lblTown.TabIndex = 36;
             this.lblTown.Text = "Town ";
             // 
             // txtAddr2
             // 
-            this.txtAddr2.Location = new System.Drawing.Point(106, 187);
+            this.txtAddr2.Location = new System.Drawing.Point(106, 184);
             this.txtAddr2.Name = "txtAddr2";
             this.txtAddr2.Size = new System.Drawing.Size(201, 20);
-            this.txtAddr2.TabIndex = 21;
+            this.txtAddr2.TabIndex = 35;
             // 
             // lblAddr2
             // 
             this.lblAddr2.AutoSize = true;
-            this.lblAddr2.Location = new System.Drawing.Point(12, 190);
+            this.lblAddr2.Location = new System.Drawing.Point(12, 187);
             this.lblAddr2.Name = "lblAddr2";
             this.lblAddr2.Size = new System.Drawing.Size(77, 13);
-            this.lblAddr2.TabIndex = 20;
+            this.lblAddr2.TabIndex = 34;
             this.lblAddr2.Text = "Address Line 2";
             // 
             // txtAddr1
             // 
-            this.txtAddr1.Location = new System.Drawing.Point(106, 161);
+            this.txtAddr1.Location = new System.Drawing.Point(106, 158);
             this.txtAddr1.Name = "txtAddr1";
             this.txtAddr1.Size = new System.Drawing.Size(201, 20);
-            this.txtAddr1.TabIndex = 19;
+            this.txtAddr1.TabIndex = 33;
             // 
             // lblAddr1
             // 
             this.lblAddr1.AutoSize = true;
-            this.lblAddr1.Location = new System.Drawing.Point(12, 164);
+            this.lblAddr1.Location = new System.Drawing.Point(12, 161);
             this.lblAddr1.Name = "lblAddr1";
             this.lblAddr1.Size = new System.Drawing.Size(77, 13);
-            this.lblAddr1.TabIndex = 18;
+            this.lblAddr1.TabIndex = 32;
             this.lblAddr1.Text = "Address Line 1";
             // 
             // txtCoName
             // 
-            this.txtCoName.Location = new System.Drawing.Point(106, 122);
+            this.txtCoName.Location = new System.Drawing.Point(106, 119);
             this.txtCoName.Name = "txtCoName";
             this.txtCoName.Size = new System.Drawing.Size(201, 20);
-            this.txtCoName.TabIndex = 17;
+            this.txtCoName.TabIndex = 31;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(12, 125);
+            this.lblName.Location = new System.Drawing.Point(12, 122);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(82, 13);
-            this.lblName.TabIndex = 16;
+            this.lblName.TabIndex = 30;
             this.lblName.Text = "Company Name";
             // 
             // frmMainMenu
@@ -422,6 +495,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 518);
+            this.Controls.Add(this.txtContactEmail);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtContactName);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtAddr3);
+            this.Controls.Add(this.lblAddr3);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.txtPost);
@@ -434,6 +513,8 @@
             this.Controls.Add(this.lblAddr1);
             this.Controls.Add(this.txtCoName);
             this.Controls.Add(this.lblName);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.lstDetails);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lstDevices);
             this.Controls.Add(this.btnAddNew);
@@ -444,7 +525,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMainMenu";
-            this.Text = "MADAM Control v0.2 - Main Menu";
+            this.Text = "MADAM Control  - Main Menu";
             this.Load += new System.EventHandler(this.frmMainMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -485,6 +566,14 @@
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.ListBox lstDevices;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.ListBox lstDetails;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.TextBox txtContactEmail;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtContactName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtAddr3;
+        private System.Windows.Forms.Label lblAddr3;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.TextBox txtPost;

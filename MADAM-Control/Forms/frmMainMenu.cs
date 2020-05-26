@@ -18,6 +18,9 @@ namespace MADAM_Control
 {
     public partial class frmMainMenu : Form
     {
+
+        public List<Companies> currentCompanies;
+
         public frmMainMenu()
         {
             InitializeComponent();
@@ -36,6 +39,15 @@ namespace MADAM_Control
             this.Enabled = true;
             this.Focus();
             connectToDb();
+            currentCompanies = GetCompanies();
+            if (currentCompanies != null)
+            {
+                foreach (Companies c in currentCompanies)
+                {
+                    dropCompanyList.Items.Add(c.CompName);
+                    dropCompanyList.SelectedIndex = 0;
+                }
+            }
         }
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -46,14 +58,44 @@ namespace MADAM_Control
 
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        public List<Companies> GetCompanies()
+        {
+            try
+            {
+                List<Companies> returnList;
+                string savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+                XmlSerializer mySerializer = new XmlSerializer(typeof(List<Companies>));
+                StreamReader myReader = new StreamReader(savePath + "\\MADAMControl\\Companies.XML");
+
+                returnList = (List<Companies>)mySerializer.Deserialize(myReader);
+                myReader.Close();
+                return returnList;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            populateText(dropCompanyList.SelectedIndex);
         }
 
+        public void populateText(int currentSelection)
+        {
+            Classes.Companies currCompany = currentCompanies[currentSelection];
+            txtCoName.Text = currCompany.CompName;
+            txtAddr1.Text = currCompany.CompAddrLine1;
+            txtAddr2.Text = currCompany.CompAddrLine2;
+            txtAddr3.Text = currCompany.CompAddrLine3;
+            txtContactEmail.Text = currCompany.CompContactEmail;
+        }
         private void programSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Enabled = false;

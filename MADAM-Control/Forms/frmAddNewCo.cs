@@ -15,6 +15,8 @@ namespace MADAM_Control.Forms
         Form[] frm = { new frmAdd1(), new frmAdd2() };
         int top = 0;
         int count = 2;
+        Classes.Companies coToAdd;
+        List<Classes.Companies> listOut = new List<Classes.Companies>();
         public frmAddNewCo()
         {
             InitializeComponent();
@@ -70,8 +72,10 @@ namespace MADAM_Control.Forms
                 btnNext.Enabled = false;
             }
         }
+
         private void Next()
         {
+            
             if (top == 0)
             {
                 frmAdd1 temp = (frmAdd1)frm[top];
@@ -81,7 +85,26 @@ namespace MADAM_Control.Forms
                     return;
                 }
 
-                Classes.Companies coToAdd = temp.GetInfo();
+                coToAdd = temp.GetInfo();
+            }
+
+            if (top == 1)
+            {
+                frmAdd2 temp2 = (frmAdd2)frm[top];
+                coToAdd.CompServerIp = temp2.GetIp().ToString();
+                coToAdd.DeviceList = null;
+                try
+                {
+                    listOut.Add(coToAdd);
+                    Classes.Utils.saveAllCompany(listOut);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+                
+                this.Close();
             }
 
             top++;
@@ -96,7 +119,8 @@ namespace MADAM_Control.Forms
                 frmLoad();
                 if (top + 1 == count)
                 {
-                    btnNext.Enabled = false;
+                    btnNext.Text = "Save";
+                    btnNext.Enabled = true;
                 }
             }
 
@@ -119,6 +143,11 @@ namespace MADAM_Control.Forms
         public void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pnlButtons_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

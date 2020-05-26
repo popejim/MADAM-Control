@@ -73,6 +73,7 @@
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(800, 59);
             this.pnlButtons.TabIndex = 3;
+            this.pnlButtons.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlButtons_Paint);
             // 
             // btnCancel
             // 

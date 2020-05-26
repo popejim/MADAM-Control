@@ -84,6 +84,7 @@
     <Compile Include="Classes\Devices.cs" />
     <Compile Include="Classes\Settings.cs" />
     <Compile Include="Classes\Users.cs" />
+    <Compile Include="Classes\Utils.cs" />
     <Compile Include="Forms\frmSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +152,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
