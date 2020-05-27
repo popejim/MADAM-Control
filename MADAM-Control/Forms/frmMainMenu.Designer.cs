@@ -82,6 +82,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lstUsers = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnExportAll = new System.Windows.Forms.Button();
+            this.btnExportOne = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxLogo)).BeginInit();
             this.SuspendLayout();
@@ -333,6 +335,7 @@
             this.btnEdit.TabIndex = 6;
             this.btnEdit.Text = "Edit Company";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lstDetails
             // 
@@ -531,11 +534,32 @@
             this.label5.TabIndex = 51;
             this.label5.Text = "Selected Device Users";
             // 
+            // btnExportAll
+            // 
+            this.btnExportAll.Location = new System.Drawing.Point(599, 53);
+            this.btnExportAll.Name = "btnExportAll";
+            this.btnExportAll.Size = new System.Drawing.Size(73, 46);
+            this.btnExportAll.TabIndex = 52;
+            this.btnExportAll.Text = "Export All";
+            this.btnExportAll.UseVisualStyleBackColor = true;
+            this.btnExportAll.Click += new System.EventHandler(this.btnExportAll_Click);
+            // 
+            // btnExportOne
+            // 
+            this.btnExportOne.Location = new System.Drawing.Point(688, 53);
+            this.btnExportOne.Name = "btnExportOne";
+            this.btnExportOne.Size = new System.Drawing.Size(73, 46);
+            this.btnExportOne.TabIndex = 53;
+            this.btnExportOne.Text = "Export Selected";
+            this.btnExportOne.UseVisualStyleBackColor = true;
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 518);
+            this.Controls.Add(this.btnExportOne);
+            this.Controls.Add(this.btnExportAll);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lstUsers);
             this.Controls.Add(this.label4);
@@ -635,5 +659,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox lstUsers;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnExportAll;
+        private System.Windows.Forms.Button btnExportOne;
     }
 }

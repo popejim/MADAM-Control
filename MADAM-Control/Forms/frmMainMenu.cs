@@ -90,6 +90,10 @@ namespace MADAM_Control
 
         public void populateDeviceDetails(int currentSelection)
         {
+            if (currentSelection == -1)
+            {
+                currentSelection = 1;
+            }
             lstDetails.Items.Clear();
             lstUsers.Items.Clear();
             Companies currCompany = currentCompanies[selectedCompany];
@@ -99,7 +103,7 @@ namespace MADAM_Control
             lstDetails.Items.Add(currDevice.osVersion);
             foreach (Users u in currDevice.UserList)
             {
-                lstUsers.Items.Add(u);
+                lstUsers.Items.Add(u.fullName);
             }
         }
 
@@ -219,6 +223,30 @@ namespace MADAM_Control
             
             List<Device> temp = Classes.Utils.getRemoteDevices(currCompany.CompServerIp);
             
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            List<Companies> listToSend = GetCompanies();
+            Companies currCompany = currentCompanies[dropCompanyList.SelectedIndex];
+            Forms.frmEditCompany frmEdit = new Forms.frmEditCompany();
+            frmEdit.FormClosed += new FormClosedEventHandler(frmEdit_FormClosed);
+            frmEdit.Show();
+            frmEdit.populateBoxes(listToSend, currCompany);
+            this.Enabled = false;
+            frmEdit.Focus();
+        }
+
+        private void frmEdit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Enabled = true;
+            comboBox1_SelectedIndexChanged(this,e);
+        }
+
+        private void btnExportAll_Click(object sender, EventArgs e)
+        {
+            Classes.Utils.exportAllToCsv(currentCompanies);
+            MessageBox.Show("All companies exported. CSV can be found in appdata/roaming/MADAMControl/AllCompanies.csv", "All Companies Exported");
         }
     }
 }

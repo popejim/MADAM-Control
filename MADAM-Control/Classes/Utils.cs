@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using CsvHelper;
 
 namespace MADAM_Control.Classes
 {
@@ -40,6 +41,7 @@ namespace MADAM_Control.Classes
         {
             return returnList;
         }
+
         public static void saveAllCompany(List<Companies> listIn)
         {
             string savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -62,43 +64,36 @@ namespace MADAM_Control.Classes
         }
 
 
-        public static void saveCompany(Companies coIn)
+        public static void saveCompany(Companies coIn, List<Companies> listIn)
         {
-            string savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-
-            try
+            List<Companies> currentCompanies = listIn;
+            if (currentCompanies.Any(c=>c.CompName == coIn.CompName))
             {
-                XmlSerializer mySerializer = new XmlSerializer(typeof(Companies));
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-
-            if (Directory.Exists(savePath + "\\MADAMControl\\"))
-            {
-                try
-                {
-                    XmlSerializer mySerializer = new XmlSerializer(typeof(Companies));
-                    StreamWriter myWriter = new StreamWriter(savePath + "\\MADAMControl\\Companies.XML");
-                    mySerializer.Serialize(myWriter, coIn);
-                    myWriter.Close();
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                }
-
+                currentCompanies.Clear();
+                currentCompanies.Add(coIn);
+                saveAllCompany(currentCompanies);
             }
 
             else
             {
-                XmlSerializer mySerializer = new XmlSerializer(typeof(Companies));
-                Directory.CreateDirectory(savePath + "\\MADAMControl\\");
-                StreamWriter myWriter = new StreamWriter(savePath + "\\MADAMControl\\Companies.XML");
-                mySerializer.Serialize(myWriter, coIn);
-                myWriter.Close();
+                currentCompanies.Add(coIn);
+                saveAllCompany(currentCompanies);
             }
         }
+
+        public static void exportAllToCsv(List<Companies> inList)
+        {
+            string savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            StreamWriter myWriter = new StreamWriter(savePath + "\\MADAMControl\\AllCompanies.csv");
+
+            using (CsvWriter csv = new CsvWriter(myWriter, System.Globalization.CultureInfo.CurrentCulture))
+            {
+                csv.WriteRecords(inList);
+            }
+
+            
+        }
+
+
     }
 }

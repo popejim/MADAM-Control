@@ -24,5 +24,6 @@ namespace MADAM_Control.Classes
         public string CompContactEmail { get; set; }
         public List<Device> DeviceList { get; set; }
 
+
     }
 }
