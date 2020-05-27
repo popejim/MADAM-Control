@@ -79,7 +79,6 @@ namespace MADAM_Control.Forms
                     {
                         chkStartup.Checked = false;
                     }
-                    myFileStream.Close();
                 }
             }
         }

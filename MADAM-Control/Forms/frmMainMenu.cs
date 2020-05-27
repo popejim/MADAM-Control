@@ -202,12 +202,12 @@ namespace MADAM_Control
                 settings = (Settings)mySerializer.Deserialize(myFileStream);
                 myFileStream.Close();
                 var dbip = settings.dbip;
-                var client = new MongoClient("mongodb://192.168.88.22:27017");
+                var client = new MongoClient("mongodb://" + dbip + ":27017");
                 var database = client.GetDatabase("madam");
             }
             catch (Exception e)
             {
-                MessageBox.Show("Failed to connect", "Could not connect to database, has the IP been set in settings?");
+                MessageBox.Show("Could not connect to database, has the IP been set in settings?", "Failed to connect");
                 Console.WriteLine(e);
             }
         }

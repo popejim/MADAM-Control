@@ -149,7 +149,6 @@ C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MongoDB
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MongoDB.Driver.Core.xml
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\Snappy.NET.xml
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\System.Buffers.xml
-C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.csprojResolveAssemblyReference.cache
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM_Control.Forms.frmAdd2.resources
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM_Control.Forms.frmSettings.resources
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM_Control.Forms.frmAdd1.resources
@@ -168,3 +167,5 @@ C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\System.
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\System.ValueTuple.xml
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.csproj.MADAM-Control.exe.config
+C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MADAM-Control.exe.CodeAnalysisLog.xml
+C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MADAM-Control.exe.lastcodeanalysissucceeded
