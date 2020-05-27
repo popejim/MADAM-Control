@@ -552,6 +552,7 @@
             this.btnExportOne.TabIndex = 53;
             this.btnExportOne.Text = "Export Selected";
             this.btnExportOne.UseVisualStyleBackColor = true;
+            this.btnExportOne.Click += new System.EventHandler(this.btnExportOne_Click);
             // 
             // frmMainMenu
             // 

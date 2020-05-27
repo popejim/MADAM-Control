@@ -94,6 +94,17 @@ namespace MADAM_Control.Classes
             
         }
 
+        internal static void exportOneToCsv(Companies currCompany)
+        {
+            string savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string compName = currCompany.CompName;
+            StreamWriter myWriter = new StreamWriter(savePath + "\\MADAMControl\\"+ compName +".csv");
 
+            using (CsvWriter csv = new CsvWriter(myWriter, System.Globalization.CultureInfo.CurrentCulture))
+            {
+                csv.WriteRecord<Companies>(currCompany);
+                csv.WriteRecords(currCompany.DeviceList);
+            }
+        }
     }
 }

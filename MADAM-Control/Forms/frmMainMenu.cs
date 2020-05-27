@@ -248,5 +248,11 @@ namespace MADAM_Control
             Classes.Utils.exportAllToCsv(currentCompanies);
             MessageBox.Show("All companies exported. CSV can be found in appdata/roaming/MADAMControl/AllCompanies.csv", "All Companies Exported");
         }
+
+        private void btnExportOne_Click(object sender, EventArgs e)
+        {
+            Companies currCompany = currentCompanies[dropCompanyList.SelectedIndex];
+            Utils.exportOneToCsv(currCompany);
+        }
     }
 }
