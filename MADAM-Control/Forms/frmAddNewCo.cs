@@ -95,15 +95,15 @@ namespace MADAM_Control.Forms
                 coToAdd.DeviceList = null;
                 try
                 {
+                    listOut = Classes.Utils.GetCompanies();
                     listOut.Add(coToAdd);
                     Classes.Utils.saveAllCompany(listOut);
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
-                    throw;
                 }
-                
+                MessageBox.Show("New Company "+coToAdd.CompName + " Added","Company Successfuly Added");
                 this.Close();
             }
 

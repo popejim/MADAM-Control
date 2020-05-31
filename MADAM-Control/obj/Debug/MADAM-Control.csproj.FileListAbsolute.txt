@@ -167,5 +167,4 @@ C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\System.
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\System.ValueTuple.xml
 C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.csproj.MADAM-Control.exe.config
-C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MADAM-Control.exe.CodeAnalysisLog.xml
-C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\bin\Debug\MADAM-Control.exe.lastcodeanalysissucceeded
+C:\Users\Pope\Source\Repos\popejim\MADAM-Control\MADAM-Control\obj\Debug\MADAM-Control.csprojResolveAssemblyReference.cache

@@ -15,6 +15,7 @@ namespace MADAM_Control.Classes
     {
         public static List<Device> returnList;
         public static string remoteIp;
+
         public static List<Device> getRemoteDevices(string ip)
         {
             TcpClient probeServer = new TcpClient();
@@ -27,14 +28,21 @@ namespace MADAM_Control.Classes
 
         public static void getDevice(IAsyncResult ar)
         {
-            TcpClient listener = (TcpClient)ar.AsyncState;
-            TcpClient client = new TcpClient(remoteIp, 42063);
-            NetworkStream stream = client.GetStream();
-            XmlSerializer mySerializer = new XmlSerializer(typeof(List<Device>));
-            List<Device> inList = (List<Device>)mySerializer.Deserialize(stream);
-            returnList = inList;
-            stream.Close();
-            client.Close();
+            try
+            {
+                TcpClient listener = (TcpClient)ar.AsyncState;
+                TcpClient client = new TcpClient(remoteIp, 42063);
+                NetworkStream stream = client.GetStream();
+                XmlSerializer mySerializer = new XmlSerializer(typeof(List<Device>));
+                List<Device> inList = (List<Device>)mySerializer.Deserialize(stream);
+                returnList = inList;
+                stream.Close();
+                client.Close();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
 
         public static List<Device> returnDevices()
@@ -63,6 +71,26 @@ namespace MADAM_Control.Classes
             }
         }
 
+        public static List<Companies> GetCompanies()
+        {
+            try
+            {
+                List<Companies> returnList;
+                string savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+                XmlSerializer mySerializer = new XmlSerializer(typeof(List<Companies>));
+                StreamReader myReader = new StreamReader(savePath + "\\MADAMControl\\Companies.XML");
+
+                returnList = (List<Companies>)mySerializer.Deserialize(myReader);
+                myReader.Close();
+                return returnList;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
+        }
 
         public static void saveCompany(Companies coIn, List<Companies> listIn)
         {

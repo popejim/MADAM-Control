@@ -22,6 +22,7 @@ namespace MADAM_Control
 
         public List<Companies> currentCompanies;
         public int selectedCompany;
+        public int firstLoop = 0;
         public frmMainMenu()
         {
             InitializeComponent();
@@ -40,9 +41,15 @@ namespace MADAM_Control
             this.Enabled = true;
             this.Focus();
             connectToDb();
+            refresh();
+        }
+
+        private void refresh()
+        {
             currentCompanies = GetCompanies();
             if (currentCompanies != null)
             {
+                dropCompanyList.Items.Clear();
                 foreach (Companies c in currentCompanies)
                 {
                     dropCompanyList.Items.Add(c.CompName);
@@ -50,6 +57,7 @@ namespace MADAM_Control
                 }
             }
         }
+
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -109,6 +117,8 @@ namespace MADAM_Control
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lstDetails.Items.Clear();
+            lstUsers.Items.Clear();
             populateText(dropCompanyList.SelectedIndex);
             populateDeviceList(dropCompanyList.SelectedIndex);
             selectedCompany = dropCompanyList.SelectedIndex;
@@ -205,6 +215,7 @@ namespace MADAM_Control
                 var client = new MongoClient("mongodb://" + dbip + ":27017");
                 var database = client.GetDatabase("madam");
             }
+           
             catch (Exception e)
             {
                 MessageBox.Show("Could not connect to database, has the IP been set in settings?", "Failed to connect");
@@ -222,7 +233,11 @@ namespace MADAM_Control
             Companies currCompany = currentCompanies[dropCompanyList.SelectedIndex];
             
             List<Device> temp = Classes.Utils.getRemoteDevices(currCompany.CompServerIp);
-            
+
+            if (temp == null)
+            {
+                MessageBox.Show("Could not connect to Server");
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -250,6 +265,23 @@ namespace MADAM_Control
         }
 
         private void btnExportOne_Click(object sender, EventArgs e)
+        {
+            Companies currCompany = currentCompanies[dropCompanyList.SelectedIndex];
+            Utils.exportOneToCsv(currCompany);
+            MessageBox.Show("Company exported. CSV can be found in appdata/roaming/MADAMControl/"+ currCompany.CompName + ".csv", "Company Exported");
+        }
+
+        private void frmMainMenu_Activated(object sender, EventArgs e)
+        {
+            refresh();
+        }
+
+        private void allCompaniesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Utils.exportAllToCsv(currentCompanies);
+        }
+
+        private void selectedCompanyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Companies currCompany = currentCompanies[dropCompanyList.SelectedIndex];
             Utils.exportOneToCsv(currCompany);

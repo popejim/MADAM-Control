@@ -47,7 +47,6 @@
             this.generateReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allCompaniesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectedCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpF1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -214,8 +213,7 @@
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.generateReportToolStripMenuItem,
-            this.exportToCSVToolStripMenuItem});
+            this.generateReportToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -234,19 +232,14 @@
             this.allCompaniesToolStripMenuItem.Name = "allCompaniesToolStripMenuItem";
             this.allCompaniesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.allCompaniesToolStripMenuItem.Text = "All Companies";
+            this.allCompaniesToolStripMenuItem.Click += new System.EventHandler(this.allCompaniesToolStripMenuItem_Click);
             // 
             // selectedCompanyToolStripMenuItem
             // 
             this.selectedCompanyToolStripMenuItem.Name = "selectedCompanyToolStripMenuItem";
             this.selectedCompanyToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.selectedCompanyToolStripMenuItem.Text = "Selected Company";
-            // 
-            // exportToCSVToolStripMenuItem
-            // 
-            this.exportToCSVToolStripMenuItem.Image = global::MADAM_Control.Properties.Resources.ExportTableToFile_16x;
-            this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
-            this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.exportToCSVToolStripMenuItem.Text = "Export to CSV";
+            this.selectedCompanyToolStripMenuItem.Click += new System.EventHandler(this.selectedCompanyToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -302,9 +295,9 @@
             this.pictBoxLogo.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pictBoxLogo.BackgroundImage = global::MADAM_Control.Properties.Resources.MADAM_logo;
             this.pictBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictBoxLogo.Location = new System.Drawing.Point(24, 386);
+            this.pictBoxLogo.Location = new System.Drawing.Point(15, 408);
             this.pictBoxLogo.Name = "pictBoxLogo";
-            this.pictBoxLogo.Size = new System.Drawing.Size(92, 95);
+            this.pictBoxLogo.Size = new System.Drawing.Size(96, 95);
             this.pictBoxLogo.TabIndex = 1;
             this.pictBoxLogo.TabStop = false;
             // 
@@ -359,6 +352,7 @@
             // 
             this.txtContactEmail.Location = new System.Drawing.Point(106, 341);
             this.txtContactEmail.Name = "txtContactEmail";
+            this.txtContactEmail.ReadOnly = true;
             this.txtContactEmail.Size = new System.Drawing.Size(201, 20);
             this.txtContactEmail.TabIndex = 47;
             // 
@@ -375,6 +369,7 @@
             // 
             this.txtContactName.Location = new System.Drawing.Point(106, 315);
             this.txtContactName.Name = "txtContactName";
+            this.txtContactName.ReadOnly = true;
             this.txtContactName.Size = new System.Drawing.Size(201, 20);
             this.txtContactName.TabIndex = 45;
             // 
@@ -391,6 +386,7 @@
             // 
             this.txtAddr3.Location = new System.Drawing.Point(106, 210);
             this.txtAddr3.Name = "txtAddr3";
+            this.txtAddr3.ReadOnly = true;
             this.txtAddr3.Size = new System.Drawing.Size(201, 20);
             this.txtAddr3.TabIndex = 43;
             // 
@@ -407,6 +403,7 @@
             // 
             this.txtPhone.Location = new System.Drawing.Point(106, 289);
             this.txtPhone.Name = "txtPhone";
+            this.txtPhone.ReadOnly = true;
             this.txtPhone.Size = new System.Drawing.Size(201, 20);
             this.txtPhone.TabIndex = 41;
             // 
@@ -423,6 +420,7 @@
             // 
             this.txtPost.Location = new System.Drawing.Point(106, 262);
             this.txtPost.Name = "txtPost";
+            this.txtPost.ReadOnly = true;
             this.txtPost.Size = new System.Drawing.Size(100, 20);
             this.txtPost.TabIndex = 39;
             // 
@@ -439,6 +437,7 @@
             // 
             this.txtTown.Location = new System.Drawing.Point(106, 236);
             this.txtTown.Name = "txtTown";
+            this.txtTown.ReadOnly = true;
             this.txtTown.Size = new System.Drawing.Size(201, 20);
             this.txtTown.TabIndex = 37;
             // 
@@ -455,6 +454,7 @@
             // 
             this.txtAddr2.Location = new System.Drawing.Point(106, 184);
             this.txtAddr2.Name = "txtAddr2";
+            this.txtAddr2.ReadOnly = true;
             this.txtAddr2.Size = new System.Drawing.Size(201, 20);
             this.txtAddr2.TabIndex = 35;
             // 
@@ -471,6 +471,7 @@
             // 
             this.txtAddr1.Location = new System.Drawing.Point(106, 158);
             this.txtAddr1.Name = "txtAddr1";
+            this.txtAddr1.ReadOnly = true;
             this.txtAddr1.Size = new System.Drawing.Size(201, 20);
             this.txtAddr1.TabIndex = 33;
             // 
@@ -487,6 +488,7 @@
             // 
             this.txtCoName.Location = new System.Drawing.Point(106, 119);
             this.txtCoName.Name = "txtCoName";
+            this.txtCoName.ReadOnly = true;
             this.txtCoName.Size = new System.Drawing.Size(201, 20);
             this.txtCoName.TabIndex = 31;
             // 
@@ -596,6 +598,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMainMenu";
             this.Text = "MADAM Control  - Main Menu";
+            this.Activated += new System.EventHandler(this.frmMainMenu_Activated);
             this.Load += new System.EventHandler(this.frmMainMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -632,7 +635,6 @@
         private System.Windows.Forms.ToolStripMenuItem generateReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem allCompaniesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectedCompanyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportToCSVToolStripMenuItem;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.ListBox lstDevices;
         private System.Windows.Forms.Button btnEdit;
