@@ -27,8 +27,12 @@ namespace MADAM_Control.Forms
 
         }
 
+        //following methods enable the wizard like form array. A counter is used to check which form is currently shown
+        //and some information such as button names is based on this. The final form changes the button to a save
+        //button and runs some additional code
         private void frmAddNewCo_Load(object sender, EventArgs e)
         {
+           
             frm[top].TopLevel = false;
             frm[top].AutoScroll = true;
             frm[top].Dock = DockStyle.Fill;

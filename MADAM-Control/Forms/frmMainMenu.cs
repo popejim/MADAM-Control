@@ -33,6 +33,7 @@ namespace MADAM_Control
 
         private async void frmMainMenu_Shown(object sender, EventArgs e)
         {
+            //bits to do each time form is shown
             Forms.frmSplash frmSplash = new Forms.frmSplash();
             frmSplash.Show();
             this.Enabled = false;
@@ -46,6 +47,7 @@ namespace MADAM_Control
 
         private void refresh()
         {
+            //refreshes the list of companies in the drop down menu
             currentCompanies = GetCompanies();
             if (currentCompanies != null)
             {
@@ -72,6 +74,7 @@ namespace MADAM_Control
 
         public List<Companies> GetCompanies()
         {
+            //local temp return of companies from XML file
             try
             {
                 List<Companies> returnList;
@@ -93,11 +96,13 @@ namespace MADAM_Control
 
         private void lstDevices_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //fires on the selected index of the device list changing
             populateDeviceDetails(lstDevices.SelectedIndex);
         }
 
         public void populateDeviceDetails(int currentSelection)
         {
+            //populates the device details based off the currently selected device
             if (currentSelection == -1)
             {
                 currentSelection = 1;
@@ -117,6 +122,7 @@ namespace MADAM_Control
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //fires when the selected index of the combo box changes
             lstDetails.Items.Clear();
             lstUsers.Items.Clear();
             populateText(dropCompanyList.SelectedIndex);
@@ -126,6 +132,7 @@ namespace MADAM_Control
 
         public void populateDeviceList(int currentSelection)
         {
+            //populates the device list details based off the current selection
             lstDevices.Items.Clear();
             Companies currCompany = currentCompanies[currentSelection];
             foreach (Device d in currCompany.DeviceList)
@@ -135,6 +142,7 @@ namespace MADAM_Control
         }
         public void populateText(int currentSelection)
         {
+            //fills in the various text boxes when selecting a new company
             Companies currCompany = currentCompanies[currentSelection];
             txtCoName.Text = currCompany.CompName;
             txtAddr1.Text = currCompany.CompAddrLine1;
@@ -148,12 +156,14 @@ namespace MADAM_Control
         }
         private void programSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //code for the menu strip settings button
             this.Enabled = false;
             Form frmSettings = new Forms.frmSettings();
             frmSettings.ShowDialog();
             this.Enabled = true;
         }
 
+        //following functions are to send key presses for various options under the edit menu
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SendKeys.Send("^(x)");
@@ -181,6 +191,7 @@ namespace MADAM_Control
 
         public void addNewCompanyToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //runs when clicking the add new company menu button, shows new form
             this.Enabled = false;
             Forms.frmAddNewCo frmAddNewco = new Forms.frmAddNewCo();
             frmAddNewco.FormClosed += new FormClosedEventHandler(frmAddNewco_FormClosed);
@@ -194,6 +205,7 @@ namespace MADAM_Control
 
         public void frmMainMenu_KeyPress(object sender, KeyEventArgs e)
         {
+            //catches a control and N key press and runs a new company form
             if (e.Control && e.KeyCode == Keys.N)
             {
                 addNewCompanyToolStripMenuItem_Click(this, e);
@@ -202,6 +214,7 @@ namespace MADAM_Control
 
         private void connectToDb()
         {
+            //code for initial connection to the mongo database
             try
             {
                 Settings settings;
@@ -230,6 +243,7 @@ namespace MADAM_Control
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            //returns a list of devices from the currently selected companies server application
             Companies currCompany = currentCompanies[dropCompanyList.SelectedIndex];
             
             List<Device> temp = Classes.Utils.getRemoteDevices(currCompany.CompServerIp);
@@ -242,6 +256,7 @@ namespace MADAM_Control
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            //edit button, sends currently selected company data to the new form
             List<Companies> listToSend = GetCompanies();
             Companies currCompany = currentCompanies[dropCompanyList.SelectedIndex];
             Forms.frmEditCompany frmEdit = new Forms.frmEditCompany();

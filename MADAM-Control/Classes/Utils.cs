@@ -18,8 +18,10 @@ namespace MADAM_Control.Classes
 
         public static List<Device> getRemoteDevices(string ip)
         {
+            //returns a list of remote devices from a given ip address
             TcpClient probeServer = new TcpClient();
             remoteIp = ip;
+            //gets connection and runs getDevice
             probeServer.BeginConnect(ip, 42060,getDevice,probeServer);
             probeServer.Close();
             List<Device> temp = returnDevices();
@@ -30,6 +32,7 @@ namespace MADAM_Control.Classes
         {
             try
             {
+                //recieves an incoming network stream and deserialises into a list of devices
                 TcpClient listener = (TcpClient)ar.AsyncState;
                 TcpClient client = new TcpClient(remoteIp, 42063);
                 NetworkStream stream = client.GetStream();
@@ -52,6 +55,7 @@ namespace MADAM_Control.Classes
 
         public static void saveAllCompany(List<Companies> listIn)
         {
+            //saves all companies to an XML file
             string savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
             XmlSerializer mySerializer = new XmlSerializer(typeof(List<Companies>));
@@ -73,6 +77,7 @@ namespace MADAM_Control.Classes
 
         public static List<Companies> GetCompanies()
         {
+            //returns all current companies from XML file
             try
             {
                 List<Companies> returnList;
@@ -94,6 +99,7 @@ namespace MADAM_Control.Classes
 
         public static void saveCompany(Companies coIn, List<Companies> listIn)
         {
+            //saves one single company to a CSV file
             List<Companies> currentCompanies = listIn;
             if (currentCompanies.Any(c=>c.CompName == coIn.CompName))
             {
@@ -111,6 +117,7 @@ namespace MADAM_Control.Classes
 
         public static void exportAllToCsv(List<Companies> inList)
         {
+            //exports a given list of companies to a CSV file
             string savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             StreamWriter myWriter = new StreamWriter(savePath + "\\MADAMControl\\AllCompanies.csv");
 
@@ -124,6 +131,7 @@ namespace MADAM_Control.Classes
 
         internal static void exportOneToCsv(Companies currCompany)
         {
+            //exports one company to a CSV file
             string savePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string compName = currCompany.CompName;
             StreamWriter myWriter = new StreamWriter(savePath + "\\MADAMControl\\"+ compName +".csv");
